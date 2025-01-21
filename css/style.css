@@ -594,66 +594,39 @@ main {
 
 /*h2見出し（共通）*/
 main h2 {
-	margin: 0;padding: 0;
-	font-size: 1.4rem;		/*文字サイズ。240%。*/
-	font-weight: 800;		/*太字に*/
-	margin-bottom: 5vw;		/*下にスペースを空ける*/
-	display: flex;
-	flex-direction: column-reverse;
-	letter-spacing: 0.1em;	/*文字間隔を少しだけ広く*/
-	position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 5vw;
+    display: flex;
+    flex-direction: column-reverse;
+    letter-spacing: 0.1em;
+    position: relative;
+    text-align: center;
 }
-
-	/*画面700px以上の追加指定*/
-	@media screen and (min-width:700px) {
-
-	main h2 {
-		font-size: 2.4rem;		/*文字サイズ。240%。*/
-	}
-
-	}/*追加指定ここまで*/
-
 
 /*テキストをセンタリングする場合*/
 main h2.c {
-    background: linear-gradient(
-        to right,
-        var(--rpg-window),
-        var(--base-color)
-    );
-    border: 2px solid var(--border-color);
-    padding: 15px 30px;
-    color: var(--text-color);
-    text-shadow: 0 0 15px var(--shadow-color);
-    position: relative;
+    text-align: center;
     margin-bottom: 40px;
+    padding: 15px 30px;
+    position: relative;
 }
 
 /* h2内のspan（小文字） */
 main h2 span {
-    font-size: 0.85rem;    /*文字サイズ85%*/
-    opacity: 0.5;        /*透明度。色を50%だけ出す。*/
-    font-weight: normal;    /*太字ではなく標準にする*/
+    font-size: 0.85rem;
+    opacity: 0.5;
+    font-weight: normal;
 }
 
-/*h2内のimg画像（「そのお悩み」という手書き風のふきだしに使っています）*/
-h2 img {
-	width: 100px;	/*画像の幅*/
-	transform: rotate(-10deg);	/*左に10度傾ける。そのままがいいならこの１行を削除。*/
-	position: absolute;
-	left: -10px;	/*左からの配置場所*/
-	top: -40px;	/*上からの配置場所。マイナスがついているので本来とは逆の方向に移動します。*/
+/* 画面700px以上の追加指定 */
+@media screen and (min-width:700px) {
+    main h2 {
+        font-size: 2.4rem;
+    }
 }
-
-	/*画面700px以上の追加指定*/
-	@media screen and (min-width:700px) {
-
-	h2 img {
-		width: 140px;	/*画像の幅*/
-		left: 40px;		/*左からの配置場所*/
-	}
-
-	}/*追加指定ここまで*/
 
 
 /*フッター
@@ -2608,170 +2581,6 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
     .media-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-/* RPGウィンドウの基本スタイル */
-.rpg-window {
-    background: var(--rpg-window);
-    border: 2px solid var(--border-color);
-    box-shadow: 0 0 20px var(--shadow-color);
-    border-radius: 5px;
-    padding: 20px;
-    color: var(--text-color);
-    position: relative;
-}
-
-/* セクションタイトルのRPGスタイル */
-h2.c {
-    background: linear-gradient(
-        to right,
-        var(--rpg-window),
-        var(--base-color)
-    );
-    border: 2px solid var(--border-color);
-    padding: 15px 30px;
-    color: var(--text-color);
-    text-shadow: 0 0 15px var(--shadow-color);
-    position: relative;
-    margin-bottom: 40px;
-}
-
-h2.c::before {
-    content: '▶';
-    color: var(--highlight-color);
-    margin-right: 10px;
-}
-
-/* リストアイテムのRPGスタイル */
-.list {
-    background: var(--rpg-window);
-    border: 2px solid var(--border-color);
-    padding: 20px;
-    transition: transform 0.3s;
-}
-
-.list:hover {
-    border-color: var(--highlight-color);
-    background: var(--hover-color);
-    box-shadow: 0 5px 25px var(--shadow-color);
-}
-
-/* ボタンのRPGスタイル */
-.btn1 a {
-    background: var(--rpg-window);
-    border: 2px solid var(--border-color);
-    color: var(--text-color);
-    padding: 15px 40px;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn1 a:hover {
-    border-color: var(--highlight-color);
-    background: var(--hover-color);
-}
-
-.btn1 a::before {
-    content: '▶';
-    color: var(--accent-color);
-    margin-right: 10px;
-}
-
-/* メニューのRPGスタイル */
-nav ul li a {
-    background: linear-gradient(
-        to bottom,
-        var(--rpg-window),
-        var(--base-color)
-    );
-    border: 1px solid var(--border-color);
-    padding: 10px 20px;
-    color: var(--text-color);
-}
-
-nav ul li a:hover {
-    background: var(--hover-color);
-    border-color: var(--highlight-color);
-}
-
-/* プログレスバーのRPGスタイル */
-.progress-container {
-    border: 2px solid var(--border-color);
-    background: var(--rpg-window);
-}
-
-.progress-bar {
-    background: var(--accent-color);
-}
-
-/* アニメーション効果 */
-@keyframes rpgFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
-
-.up {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* fadeInUpのキーフレーム設定 */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* list（共通設定：トップページのお知らせブロックやサービスブロックなど）
----------------------------------------------------------------------------*/
-/*ボックスの設定*/
-.list {
-    position: relative;
-    padding: 2rem;        /*ボックス内の余白*/
-    border-radius: 10px;    /*角丸の指定*/
-    background: var(--base-inverse-color);    /*背景色*/
-}
-
-/* 背景が黒の場合 */
-.bg-black {
-    background: var(--base-inverse-color);
-    color: var(--base-color);
-}
-
-/* ホバーエフェクト */
-.list:hover {
-    transform: translateY(-5px);
-}
-
-/* アイコン画像 */
-.list figure.icon {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.list figure.icon img {
-    width: 100px;
-}
-
-/* 見出し */
-.list h4 {
-    text-align: center;
-    margin: 0;
-    margin-bottom: 1rem;
-}
-
-/* 番号アイコン */
-.list .num {
-    font-size: 2rem;
-    position: absolute;
-    right: 20px;
-    top: 0;
-    opacity: 0.3;
 }
 
 
