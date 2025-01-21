@@ -33,22 +33,6 @@
 }
 
 
-/*fadeInのキーフレーム設定（汎用的）
----------------------------------------------------------------------------*/
-@keyframes fadeIn {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-
-
-/*fadeOutのキーフレーム設定（汎用的）
----------------------------------------------------------------------------*/
-@keyframes fadeOut {
-	0% {opacity: 1;}
-	100% {opacity: 0;visibility: hidden;}
-}
-
-
 /*全体の設定
 ---------------------------------------------------------------------------*/
 body * {box-sizing: border-box;}
@@ -60,22 +44,17 @@ html,body {
 
 	/*画面幅1200px以上の追加指定*/
 	@media screen and (min-width:1000px) {
-
-	html, body {
-		font-size: 14px;
+		html, body {
+			font-size: 14px;
+		}
 	}
-
-	}/*追加指定ここまで*/
 
 	/*画面幅1600px以上の追加指定*/
 	@media screen and (min-width:1600px) {
-
-	html, body {
-		font-size: 1vw;
+		html, body {
+			font-size: 1vw;
+		}
 	}
-
-	}/*追加指定ここまで*/
-
 
 body {
 	margin: 0;padding:0;
@@ -83,8 +62,8 @@ body {
 	font-optical-sizing: auto;
 	font-weight: 500;
 	-webkit-text-size-adjust: none;
-	background: var(--base-color);		/*varは背景色のことで冒頭のbase-colorを読み込みます。*/
-	color: var(--base-inverse-color);	/*文字色。冒頭で指定しているbase-inverse-colorを読み込みます。*/
+	background: var(--base-color);		/*背景色*/
+	color: var(--base-inverse-color);	/*文字色*/
 	line-height: 2;		/*行間*/
 }
 
@@ -133,25 +112,13 @@ a:hover {
 
 /*loading（ローディング）
 ---------------------------------------------------------------------------*/
-@keyframes progress {
-	0% {transform: scaleX(0);}
-	100% {transform: scaleX(1);}
-}
-
-/*ロゴ画像*/
-#loading img {
-	width: 300px;	/*画像の幅*/
-	margin-bottom: 20px;	/*ローディングバーとの間のスペース調整*/
-}
-
-/*ローディングブロック*/
 #loading {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color);	/*背景色*/
+    background: var(--primary-color);    /*背景色*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -160,12 +127,18 @@ a:hover {
     animation: fadeOut 1s ease 2s forwards;
 }
 
+/*ロゴ画像*/
+#loading img {
+    width: 200px;    /*画像の幅*/
+    margin-bottom: 20px;    /*ローディングバーとの間のスペース*/
+}
+
 /*プログレスバーの土台*/
 .progress-container {
-    width: 200px;		/*幅。お好みで。*/
-    height: 4px;		/*高さ。お好みで。*/
-    border-radius: 2px;	/*角をほんの少し丸くする*/
-    background: #fff;	/*バーのベースカラー*/
+    width: 200px;        /*幅*/
+    height: 4px;        /*高さ*/
+    border-radius: 2px;    /*角を丸くする*/
+    background: #fff;    /*バーのベース色*/
     overflow: hidden;
 }
 
@@ -173,9 +146,70 @@ a:hover {
 .progress-bar {
     width: 100%;
     height: 100%;
-    background: #000;	/*進行中のバーの色*/
-    animation: progress 2s linear;  /*#loadingのanimation時間に合わせて2秒に設定*/
+    background: #000;    /*進行中のバーの色*/
+    animation: progress 2s linear;  /*2秒でアニメーション*/
     transform-origin: left;
+}
+
+@keyframes progress {
+    0% {transform: scaleX(0);}
+    100% {transform: scaleX(1);}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0; visibility: hidden;}
+}
+
+/*ローディングブロック*/
+#loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--primary-color);	/*背景色*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	animation: fadeOut 1s ease 2s forwards;
+}
+
+.spinner {
+    text-align: center;
+}
+
+.loading-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: fadeInOut 2s infinite;
+}
+
+.loading-text {
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+    .loading-logo {
+        width: 150px;
+    }
+    
+    .loading-text {
+        font-size: 16px;
+    }
 }
 
 
@@ -252,7 +286,14 @@ header nav ul {display: none;}
 	header nav li a {
 		display: block;text-decoration: none;
 		font-size: 0.9rem;		/*文字サイズ90%*/
-		padding: 0.5rem 1rem;	/*メニュー内の余白。上下、左右へ。*/
+		padding: 10px 20px;	/*メニュー内の余白。上下、左右へ。*/
+		background: linear-gradient(
+			to bottom,
+			var(--rpg-window),
+			var(--base-color)
+		);
+		border: 1px solid var(--border-color);
+		color: var(--text-color);
 	}
 	
 	/*ドロップダウンメニュー冒頭の矢印アイコン*/
@@ -283,9 +324,9 @@ header nav ul ul {
 header nav ul ul a {
 	padding: 0.3em 1em;					/*上下、左右へのメニュー内の余白*/
 	margin-top: 4px;					/*上に空けるスペース。ドロップダウン同士の隙間。*/
-	background: var(--base-color);		/*背景色。冒頭のbase-colorを読み込みます。*/
-	color: var(--base-inverse-color);	/*文字色。冒頭のbase-inverse-colorを読み込みます。*/
-	border: 1px solid var(--base-inverse-color);	/*枠線の幅、線種、varは色の指定で冒頭のbase-inverse-colorを読み込みます。*/
+	background: var(--rpg-window);		/*背景色。冒頭のrpg-windowを読み込みます。*/
+	color: var(--text-color);	/*文字色。冒頭のtext-colorを読み込みます。*/
+	border: 1px solid var(--border-color);	/*枠線の幅、線種、varは色の指定で冒頭のborder-colorを読み込みます。*/
 	border-radius: 3px;					/*角を少し丸くする指定*/
 }
 
@@ -336,8 +377,8 @@ a.ddmenu::before {
 	width: 100%;
 	height: 100%;
 	padding: 90px 10vw 50px;				/*ブロック内の余白。上、左右、下への順番。*/
-	background: var(--primary-color);		/*背景色。冒頭のprimary-colorを読み込みます。*/
-	color: var(--primary-inverse-color);	/*文字色。冒頭のprimary-inverse-colorを読み込みます。*/
+	background: var(--rpg-window);		/*背景色。冒頭のrpg-windowを読み込みます。*/
+	color: var(--text-color);	/*文字色。冒頭のtext-colorを読み込みます。*/
 	animation: animation1 0.2s both;		/*animation1を実行する。0.2sは0.2秒の事。*/
 }
 
@@ -348,15 +389,15 @@ a.ddmenu::before {
 .small-screen #menubar a {
 	border-radius: 5px;		/*角を丸くする指定*/
 	padding: 1rem 2rem;		/*メニュー内の余白。上下、左右へ。*/
-	background: var(--base-inverse-color);		/*背景色。冒頭のbase-inverse-colorを読み込みます。*/
-	color: var(--base-color);					/*背景色。冒頭のbase-colorを読み込みます。*/
+	background: var(--rpg-window);		/*背景色。冒頭のrpg-windowを読み込みます。*/
+	color: var(--text-color);					/*文字色。冒頭のtext-colorを読み込みます。*/
 }
 
 /*子メニュー*/
 .small-screen #menubar ul ul a {
-	background: var(--base-color);		/*背景色。冒頭のbase-colorを読み込みます。*/
-	color: var(--base-inverse-color);	/*文字色。冒頭のbase-inverse-colorを読み込みます。*/
-	border: 1px solid var(--base-inverse-color);	/*枠線の幅、線種、varは色の指定で冒頭のbase-inverse-colorを読み込みます。*/
+	background: var(--rpg-window);		/*背景色。冒頭のrpg-windowを読み込みます。*/
+	color: var(--text-color);	/*文字色。冒頭のtext-colorを読み込みます。*/
+	border: 1px solid var(--border-color);	/*枠線の幅、線種、varは色の指定で冒頭のborder-colorを読み込みます。*/
 	margin-left: 2rem;	/*左に空けるスペース*/
 }
 
@@ -377,7 +418,7 @@ a.ddmenu::before {
 	flex-direction: column;
 	justify-content: space-between;
 	transform-origin: right top;
-	background: var(--base-inverse-color);	/*背景色。冒頭のbase-inverse-colorを読み込みます。*/
+	background: var(--rpg-window);	/*背景色。冒頭のrpg-windowを読み込みます。*/
 	border-radius: 0px 0px 0px 10px;		/*角を丸くする指定。左上、右上、右下、左下への順番。*/
 }
 
@@ -575,14 +616,24 @@ main h2 {
 
 /*テキストをセンタリングする場合*/
 main h2.c {
-	align-items: center;
+    background: linear-gradient(
+        to right,
+        var(--rpg-window),
+        var(--base-color)
+    );
+    border: 2px solid var(--border-color);
+    padding: 15px 30px;
+    color: var(--text-color);
+    text-shadow: 0 0 15px var(--shadow-color);
+    position: relative;
+    margin-bottom: 40px;
 }
 
-/*h2内のspan（小文字）*/
+/* h2内のspan（小文字） */
 main h2 span {
-	font-size: 0.85rem;	/*文字サイズ85%*/
-	opacity: 0.5;		/*透明度。色を50%だけ出す。*/
-	font-weight: normal;	/*太字ではなく標準にする*/
+    font-size: 0.85rem;    /*文字サイズ85%*/
+    opacity: 0.5;        /*透明度。色を50%だけ出す。*/
+    font-weight: normal;    /*太字ではなく標準にする*/
 }
 
 /*h2内のimg画像（「そのお悩み」という手書き風のふきだしに使っています）*/
@@ -882,12 +933,33 @@ footer small {
 ---------------------------------------------------------------------------*/
 .btn1 a {
 	text-shadow: none;display: block;text-decoration: none;
-	background: var(--primary-color);		/*背景色。冒頭のprimary-colorを読み込みます。*/
-	color: var(--primary-inverse-color);	/*文字色。冒頭のprimary-inverse-colorを読み込みます。*/
+	background: linear-gradient(
+		45deg,
+		var(--primary-color),
+		var(--accent-color)
+	);
+	border: 2px solid var(--border-color);
+	box-shadow: 0 0 15px var(--shadow-color);
+	color: var(--text-color);
 	font-size: 1.4rem;		/*文字サイズ。140%に。*/
-	padding: 0.5rem 2rem;	/*ボタン内の余白。上下、左右へ。*/
-	border-radius: 100px;	/*角を丸くする*/
-	text-align: center;		/*テキストをセンタリング*/
+	padding: 15px 40px;
+	position: relative;
+	overflow: hidden;
+}
+
+.btn1 a:hover {
+	background: linear-gradient(
+		45deg,
+		var(--accent-color),
+		var(--primary-color)
+	);
+	border-color: var(--highlight-color);
+}
+
+.btn1 a::before {
+	content: '▶';
+	color: var(--accent-color);
+	margin-right: 10px;
 }
 
 /*bg-primary-colorの上で使う場合*/
@@ -922,8 +994,20 @@ footer small {
 /*bg-primary-color
 ---------------------------------------------------------------------------*/
 .bg-primary-color {
-	background: var(--primary-color);		/*背景色。冒頭のprimary-colorを読み込みます。*/
-	color: var(--primary-inverse-color);	/*文字色。冒頭のprimary-inverse-colorを読み込みます。*/
+    background: var(--primary-color);        /*背景色。冒頭のprimary-colorを読み込みます。*/
+    color: var(--primary-inverse-color);    /*文字色。冒頭のprimary-inverse-colorを読み込みます。*/
+}
+
+/* bg-primary-color内のリストアイテムのスタイル */
+.bg-primary-color .list {
+    background: var(--base-color);    /* 白背景 */
+    color: var(--base-inverse-color); /* 暗い文字色 */
+}
+
+/* bg-primary-color内のリストアイテムのホバー時 */
+.bg-primary-color .list:hover {
+    transform: translateY(-5px);
+    background: var(--base-color);    /* ホバー時も白背景を維持 */
 }
 
 
@@ -1845,10 +1929,20 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
 
 .threads-post {
     background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.threads-post:hover {
+    transform: translateY(-5px);
+}
+
+/* 最後の投稿の下マージンを消す */
+.threads-post:last-child {
+    margin-bottom: 0;
 }
 
 .threads-post p {
@@ -1975,6 +2069,709 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
     .date-time-inputs {
         grid-template-columns: 1fr;
     }
+}
+
+/* 料金プラン用の追加スタイル */
+.wide-list {
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.minimum-price {
+    text-align: center;
+    color: #666;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+.margin-top {
+    margin-top: 40px;
+}
+
+.note {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+/* 料金プラン用のスタイル */
+.price-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.price-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 350px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-card.wide {
+    width: 800px;
+    max-width: 90%;
+}
+
+.price-card.popular {
+    border: 2px solid #81e8ed;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #81e8ed;
+    color: #333;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card-header {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h3 {
+    margin: 0 0 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.price-tag {
+    font-size: 18px;
+}
+
+.price-tag .price {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+}
+
+.price-tag .tax {
+    color: #666;
+    font-size: 14px;
+}
+
+.minimum {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list.two-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.features-list li i {
+    color: #81e8ed;
+    margin-right: 10px;
+}
+
+.card-footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.plan-button {
+    display: inline-block;
+    padding: 12px 40px;
+    background: #81e8ed;
+    color: #333;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.plan-button:hover {
+    background: #6cd7dc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(129,232,237,0.3);
+}
+
+.agency-plan {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.price-notes {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.price-notes p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .price-card {
+        width: 100%;
+    }
+    
+    .features-list.two-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 料金表のスタイル */
+.scroll {
+    overflow-x: auto;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.price-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    font-size: 16px; /* 基本フォントサイズを大きく */
+}
+
+.price-table th {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    width: 33.33%;
+    background: #f8f9fa; /* ヘッダー背景色を追加 */
+}
+
+.price-table th:first-child {
+    width: 25%;
+}
+
+.price-table th.popular {
+    position: relative;
+    background: #f8ffff;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #81e8ed;
+    color: #333;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.price-table h3 {
+    margin: 0 0 15px;
+    color: #222; /* より濃い色に */
+    font-size: 26px; /* サイズを大きく */
+    font-weight: 700; /* より太く */
+}
+
+.price-tag {
+    font-size: 36px; /* 価格を大きく */
+    font-weight: bold;
+    color: #222; /* より濃い色に */
+    line-height: 1.4;
+}
+
+.price-tag span {
+    font-size: 18px;
+    color: #444; /* より濃い色に */
+    font-weight: normal;
+}
+
+.price-table td {
+    padding: 20px 30px; /* パディングを増やして余白を確保 */
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #333; /* 文字色を濃く */
+    line-height: 1.6; /* 行間を広げる */
+}
+
+.price-table td:first-child {
+    text-align: left;
+    color: #222; /* より濃い色に */
+    font-weight: 600; /* やや太く */
+    font-size: 15px;
+}
+
+.action-row td {
+    padding: 30px;
+    border-bottom: none;
+}
+
+/* 運用代行プラン用のスタイル */
+.agency-plan-table {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px; /* パディングを増やす */
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.agency-plan-table h3 {
+    font-size: 28px; /* タイトルを大きく */
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.service-table {
+    width: 100%;
+    margin: 30px 0;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.service-table td {
+    padding: 15px;
+    width: 50%;
+    color: #333;
+    line-height: 1.6;
+}
+
+.minimum-price {
+    font-size: 16px; /* 最低料金の文字を大きく */
+    color: #444;
+    margin: 15px 0 30px;
+}
+
+/* 注意書きのスタイル更新 */
+.price-notes {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.notes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notes-list li {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.notes-list li:last-child {
+    margin-bottom: 0;
+}
+
+.notes-list li i {
+    color: #666;
+    margin-right: 10px;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .price-notes {
+        margin: 30px 20px;
+        padding: 15px 20px;
+    }
+    
+    .notes-list li {
+        font-size: 14px;
+    }
+}
+
+/* Threads投稿セクションのスタイル */
+.threads-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.threads-post {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.threads-post:hover {
+    transform: translateY(-5px);
+}
+
+/* 最後の投稿の下マージンを消す */
+.threads-post:last-child {
+    margin-bottom: 0;
+}
+
+.post-content {
+    margin-bottom: 20px;
+}
+
+.post-content h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.learning-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.learning-steps li {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.post-description {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.8;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.threads-link-container {
+    margin-top: 40px;
+}
+
+.threads-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: #000;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.threads-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.threads-button i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .threads-container {
+        padding: 0 15px;
+    }
+    
+    .threads-post {
+        padding: 20px;
+    }
+    
+    .learning-steps li {
+        font-size: 1em;
+    }
+    
+    .post-description {
+        font-size: 1em;
+    }
+}
+
+/* メディア掲載＆情報発信セクション */
+.media-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.media-item {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.media-item:hover {
+    transform: translateY(-5px);
+}
+
+.media-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.threads-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: #000;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.threads-link:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.threads-link i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .media-container {
+        padding: 15px;
+    }
+
+    .threads-link {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
+
+/* タブレット対応 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* RPGウィンドウの基本スタイル */
+.rpg-window {
+    background: var(--rpg-window);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 20px var(--shadow-color);
+    border-radius: 5px;
+    padding: 20px;
+    color: var(--text-color);
+    position: relative;
+}
+
+/* セクションタイトルのRPGスタイル */
+h2.c {
+    background: linear-gradient(
+        to right,
+        var(--rpg-window),
+        var(--base-color)
+    );
+    border: 2px solid var(--border-color);
+    padding: 15px 30px;
+    color: var(--text-color);
+    text-shadow: 0 0 15px var(--shadow-color);
+    position: relative;
+    margin-bottom: 40px;
+}
+
+h2.c::before {
+    content: '▶';
+    color: var(--highlight-color);
+    margin-right: 10px;
+}
+
+/* リストアイテムのRPGスタイル */
+.list {
+    background: var(--rpg-window);
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.list:hover {
+    border-color: var(--highlight-color);
+    background: var(--hover-color);
+    box-shadow: 0 5px 25px var(--shadow-color);
+}
+
+/* ボタンのRPGスタイル */
+.btn1 a {
+    background: var(--rpg-window);
+    border: 2px solid var(--border-color);
+    color: var(--text-color);
+    padding: 15px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn1 a:hover {
+    border-color: var(--highlight-color);
+    background: var(--hover-color);
+}
+
+.btn1 a::before {
+    content: '▶';
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+/* メニューのRPGスタイル */
+nav ul li a {
+    background: linear-gradient(
+        to bottom,
+        var(--rpg-window),
+        var(--base-color)
+    );
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    color: var(--text-color);
+}
+
+nav ul li a:hover {
+    background: var(--hover-color);
+    border-color: var(--highlight-color);
+}
+
+/* プログレスバーのRPGスタイル */
+.progress-container {
+    border: 2px solid var(--border-color);
+    background: var(--rpg-window);
+}
+
+.progress-bar {
+    background: var(--accent-color);
+}
+
+/* アニメーション効果 */
+@keyframes rpgFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* fadeInUpのキーフレーム設定 */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* list（共通設定：トップページのお知らせブロックやサービスブロックなど）
+---------------------------------------------------------------------------*/
+/*ボックスの設定*/
+.list {
+    position: relative;
+    padding: 2rem;        /*ボックス内の余白*/
+    border-radius: 10px;    /*角丸の指定*/
+    background: var(--base-inverse-color);    /*背景色*/
+}
+
+/* 背景が黒の場合 */
+.bg-black {
+    background: var(--base-inverse-color);
+    color: var(--base-color);
+}
+
+/* ホバーエフェクト */
+.list:hover {
+    transform: translateY(-5px);
+}
+
+/* アイコン画像 */
+.list figure.icon {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.list figure.icon img {
+    width: 100px;
+}
+
+/* 見出し */
+.list h4 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+/* 番号アイコン */
+.list .num {
+    font-size: 2rem;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    opacity: 0.3;
 }
 
 

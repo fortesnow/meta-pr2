@@ -6,6 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="広告運用スキルを習得したい方向けの無料カウンセリング予約フォームです。現在の状況や目標に合わせて、最適な学習プランをご提案いたします。">
 <link rel="stylesheet" href="css/style.css">
+
+<!-- Microsoft Clarity トラッキングコード -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "px7tc0omzp");
+</script>
 </head>
 
 <body>
@@ -19,7 +28,7 @@
 <!--▼▼▼▼▼ここから「ヘッダー」-->
 <header>
 
-<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="SAMPLE COMPANY"></a></h1>
+<h1 id="logo"><a href="index.html"><img src="images/logo.png" alt="Stellarium"></a></h1>
 
 <nav>
 <ul>
@@ -75,6 +84,28 @@
             <div class="form-group">
                 <label for="tel">電話番号</label>
                 <input type="tel" id="tel" name="電話番号">
+            </div>
+
+            <div class="form-group">
+                <label for="experience">現在の状況<span class="required">※</span></label>
+                <select id="experience" name="現在の状況" class="ws" required>
+                    <option value="">選択してください</option>
+                    <option value="未経験">広告運用未経験</option>
+                    <option value="基礎学習中">基礎学習中</option>
+                    <option value="実務経験あり">実務経験あり（1年未満）</option>
+                    <option value="実務経験豊富">実務経験豊富（1年以上）</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="purpose">学習目的<span class="required">※</span></label>
+                <select id="purpose" name="学習目的" class="ws" required>
+                    <option value="">選択してください</option>
+                    <option value="スキルアップ">現在の仕事でのスキルアップ</option>
+                    <option value="転職準備">転職・キャリアチェンジの準備</option>
+                    <option value="副業">副業として始めたい</option>
+                    <option value="その他">その他</option>
+                </select>
             </div>
 
             <div class="form-group date-time">
