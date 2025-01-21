@@ -2583,4 +2583,50 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
     }
 }
 
+/* 料金表のスマホ対応 */
+@media (max-width: 768px) {
+    .list-grid1 {
+        grid-template-columns: 1fr;  /* 1列に */
+        gap: 1.5rem;
+    }
+
+    .list {
+        padding: 1.5rem;
+    }
+
+    /* 料金表の文字サイズ調整 */
+    .list h4 {
+        font-size: 1.1rem;
+    }
+
+    .list p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* 番号の位置調整 */
+    .list .num {
+        font-size: 1.5rem;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/*h2内のimg画像（「そのお悩み」という手書き風のふきだしに使っています）*/
+h2 img {
+    width: 100px;    /*画像の幅*/
+    transform: rotate(-10deg);    /*左に10度傾ける*/
+    position: absolute;
+    left: -10px;    /*左からの配置場所*/
+    top: -40px;    /*上からの配置場所*/
+}
+
+/*画面幅700px以上の追加指定*/
+@media screen and (min-width:700px) {
+    h2 img {
+        width: 100px;    /*画像の幅を100pxに固定*/
+        left: -10px;     /*左からの配置場所*/
+    }
+}
+
 
