@@ -2,9 +2,9 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>WEB制作・システム開発サイト向け（ランディングページタイプ） 無料ホームページテンプレート tp_biz63</title>
+<title>無料カウンセリング予約 - Stellarium</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ここにサイト説明を入れます">
+<meta name="description" content="広告運用スキルを習得したい方向けの無料カウンセリング予約フォームです。現在の状況や目標に合わせて、最適な学習プランをご提案いたします。">
 <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -46,42 +46,73 @@
 <main>
 
 
-<!--▼▼▼▼▼ここから「お問い合わせフォーム（※サンプル画面）」-->
-<section>
+<!--▼▼▼▼▼ここから「お問い合わせフォーム」-->
+<section class="contact-section">
+    <div class="form-container">
+        <h2 class="c">無料カウンセリング予約<span>Free Consultation</span></h2>
 
-<form>
+        <p class="c description">
+            広告運用スキルを身につけたい方向けの無料カウンセリングです。<br>
+            現在の状況や目標をお聞きし、最適な学習プランをご提案させていただきます。
+        </p>
 
-<h2 class="c">お問い合わせ<span>Contact</span></h2>
-<p>当ページと同じ３項目のお問い合わせフォーム（自動フォーム試用版）を簡単に使えるようにセットしています。<br>
-<span class="color-check">※当ページ（contact.html）はフォームの見本ページです。実際の自動フォームには使いませんのでご注意下さい。</span></p>
-<p><span class="color-check">自動フォームを使う場合（※編集に入る前にご確認下さい）</span><br>
-あなたのメールアドレス設定と、簡単な編集だけで使えます。<a href="https://template-party.com/file/formgen_manual_set2.html" target="_blank">こちらのマニュアルをご覧下さい。</a></p>
-<p><span class="color-check">自動フォームを使わない場合</span><br>
-テンプレートに梱包されている「form.html」「confirm.html」「finish.html」の3枚のファイルを削除して下さい。</p>
+        <form class="modern-form" action="https://formsubmit.co/bluestellarium@gmail.com" method="POST" onsubmit="return submitForm(event)">
+            <!-- FormSubmitの設定 -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="none">
+            <input type="hidden" name="_subject" value="新規カウンセリング予約">
+            
+            <div class="form-group">
+                <label for="name">お名前<span class="required">※</span></label>
+                <input type="text" id="name" name="お名前" required>
+            </div>
 
-<table class="ta1">
-<tr>
-<th>お名前※</th>
-<td><input type="text" name="お名前" size="30" class="ws"></td>
-</tr>
-<tr>
-<th>メールアドレス※</th>
-<td><input type="text" name="メールアドレス" size="30" class="ws"></td>
-</tr>
-<tr>
-<th>お問い合わせ詳細※</th>
-<td><textarea name="お問い合わせ詳細" cols="30" rows="10" class="wl"></textarea></td>
-</tr>
-</table>
+            <div class="form-group">
+                <label for="email">メールアドレス<span class="required">※</span></label>
+                <input type="email" id="email" name="メールアドレス" required>
+            </div>
 
-<p class="c">
-<input type="submit" value="内容を確認する">
-</p>
+            <div class="form-group">
+                <label for="tel">電話番号</label>
+                <input type="tel" id="tel" name="電話番号">
+            </div>
 
-</form>
+            <div class="form-group date-time">
+                <label>希望カウンセリング日時（第1希望）<span class="required">※</span></label>
+                <div class="date-time-inputs">
+                    <input type="date" name="希望日1" required>
+                    <select name="希望時間1" required>
+                        <option value="">時間を選択</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                    </select>
+                </div>
+            </div>
 
+            <div class="form-group">
+                <label for="message">ご相談内容<span class="required">※</span></label>
+                <textarea id="message" name="ご相談内容" rows="6" required 
+                    placeholder="現在の課題や目標、ご不安な点など、できるだけ具体的にお書きください。"></textarea>
+            </div>
+
+            <div class="form-notice">
+                <p>※カウンセリングは、オンラインミーティングにて実施いたします。</p>
+                <p>※ご予約後、担当者より確認のご連絡をさせていただきます。</p>
+            </div>
+
+            <div class="form-button">
+                <button type="submit" class="submit-btn">カウンセリングを予約する</button>
+            </div>
+        </form>
+    </div>
 </section>
-<!--▲▲▲▲▲ここまで「お問い合わせフォーム（※サンプル画面）」-->
+<!--▲▲▲▲▲ここまで「お問い合わせフォーム」-->
 
 
 
@@ -93,16 +124,16 @@
 <footer>
 
 <div>
-<p class="logo"><img src="images/logo.png" alt="SAMPLE COMPANY"></p>
+<p class="logo"><img src="images/logo.png" alt="Stellarium"></p>
 <ul class="icons">
 <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-<li><a href="#"><i class="fab fa-line"></i></a></li>
+<li><a href="https://lin.ee/OdX0V9B"><i class="fab fa-line"></i></a></li>
 <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+<li><a href="https://www.instagram.com/stellariumix"><i class="fab fa-instagram"></i></a></li>
 </ul>
 <p>東京都XXX区XXXXビル１F<br>
 03-0000-0000</p>
-<small>Copyright&copy; SAMPLE COMPANY All Rights Reserved.</small>
+<small>Copyright&copy; Stellarium All Rights Reserved.</small>
 </div>
 
 <div>
@@ -149,7 +180,7 @@
 <!--開閉ブロック-->
 <div id="menubar">
 
-<p class="logo"><img src="images/logo.png" alt="SAMPLE COMPANY"></p>
+<p class="logo"><img src="images/logo.png" alt="Stellarium"></p>
 
 <nav>
 <ul>
@@ -186,6 +217,82 @@
 
 <!--このテンプレート専用のスクリプト-->
 <script src="js/main.js"></script>
+
+<!-- フォーム送信後のポップアップ用スタイル -->
+<style>
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.popup button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #81e8ed;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+
+<!-- ポップアップのHTML -->
+<div class="popup-overlay" id="popupOverlay"></div>
+<div class="popup" id="successPopup">
+    <h3>送信完了</h3>
+    <p>カウンセリングのご予約ありがとうございます。<br>
+    担当者より確認のご連絡をさせていただきます。</p>
+    <button onclick="closePopup()">閉じる</button>
+</div>
+
+<!-- JavaScript -->
+<script>
+function submitForm(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        document.getElementById('popupOverlay').style.display = 'block';
+        document.getElementById('successPopup').style.display = 'block';
+        form.reset();
+    })
+    .catch(error => {
+        alert('送信に失敗しました。もう一度お試しください。');
+    });
+    
+    return false;
+}
+
+function closePopup() {
+    document.getElementById('popupOverlay').style.display = 'none';
+    document.getElementById('successPopup').style.display = 'none';
+}
+</script>
 
 </body>
 </html>

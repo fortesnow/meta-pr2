@@ -1866,4 +1866,115 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
     text-decoration: underline;
 }
 
+/* コンタクトフォームのスタイル */
+.contact-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+.description {
+    margin-bottom: 40px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.modern-form {
+    display: grid;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.required {
+    color: #ff4444;
+    margin-left: 4px;
+}
+
+.modern-form input,
+.modern-form select,
+.modern-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.modern-form input:focus,
+.modern-form select:focus,
+.modern-form textarea:focus {
+    border-color: #81e8ed;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(129,232,237,0.2);
+}
+
+.date-time-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-notice {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background: #81e8ed;
+    color: #333;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(129,232,237,0.3);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 15px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .date-time-inputs {
+        grid-template-columns: 1fr;
+    }
+}
+
 
