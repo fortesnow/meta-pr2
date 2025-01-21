@@ -905,54 +905,48 @@ footer small {
 /*btn1（ボタン）
 ---------------------------------------------------------------------------*/
 .btn1 a {
-	text-shadow: none;display: block;text-decoration: none;
-	background: linear-gradient(
-		45deg,
-		var(--primary-color),
-		var(--accent-color)
-	);
-	border: 2px solid var(--border-color);
-	box-shadow: 0 0 15px var(--shadow-color);
-	color: var(--text-color);
-	font-size: 1.4rem;		/*文字サイズ。140%に。*/
-	padding: 15px 40px;
-	position: relative;
-	overflow: hidden;
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 40px;
+    color: #fff;
+    background: var(--primary-color);
+    border-radius: 5px;
+    transition: all 0.3s;
 }
 
 .btn1 a:hover {
-	background: linear-gradient(
-		45deg,
-		var(--accent-color),
-		var(--primary-color)
-	);
-	border-color: var(--highlight-color);
+    background: linear-gradient(
+        45deg,
+        var(--accent-color),
+        var(--primary-color)
+    );
+    border-color: var(--highlight-color);
 }
 
-.btn1 a::before {
-	content: '▶';
-	color: var(--accent-color);
-	margin-right: 10px;
+/* 大きいボタン用の追加スタイル */
+.btn-large a {
+    font-size: 1.2em;
+    padding: 20px 50px;
 }
 
 /*bg-primary-colorの上で使う場合*/
 .bg-primary-color .btn1 a {
-	background: var(--primary-inverse-color);		/*背景色。冒頭のprimary-inverse-colorを読み込みます。*/
-	color: var(--primary-color);	/*文字色。冒頭のprimary-colorを読み込みます。*/
+    background: var(--primary-inverse-color);		/*背景色。冒頭のprimary-inverse-colorを読み込みます。*/
+    color: var(--primary-color);	/*文字色。冒頭のprimary-colorを読み込みます。*/
 }
 
 /*マウスオン時*/
 .btn1 a:hover {
-	opacity: 1;
-	transform: scale(1.05);	/*105%に拡大*/
-	background: var(--primary-inverse-color);	/*背景色。冒頭のprimary-inverse-colorを読み込みます。*/
-	color: var(--primary-color);				/*文字色。冒頭のprimary-colorを読み込みます。*/
+    opacity: 1;
+    transform: scale(1.05);	/*105%に拡大*/
+    background: var(--primary-inverse-color);	/*背景色。冒頭のprimary-inverse-colorを読み込みます。*/
+    color: var(--primary-color);				/*文字色。冒頭のprimary-colorを読み込みます。*/
 }
 
 /*bg-primary-colorの上で使う場合*/
 .bg-primary-color .btn1 a:hover {
-	background: #fff;	/*背景色*/
-	color: #333;		/*文字色*/
+    background: #fff;	/*背景色*/
+    color: #333;		/*文字色*/
 }
 
 /*矢印アイコン*/
@@ -2437,10 +2431,9 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
 }
 
 .learning-steps li {
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 12px;
-    line-height: 1.6;
+    font-size: 1em;
+    margin-bottom: 10px;
+    position: relative;
 }
 
 .post-description {
@@ -2587,28 +2580,66 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
 @media (max-width: 768px) {
     .list-grid1 {
         grid-template-columns: 1fr;  /* 1列に */
-        gap: 1.5rem;
+        gap: 2rem;    /* 間隔を広げる */
     }
 
     .list {
-        padding: 1.5rem;
+        padding: 2rem;    /* パディングを増やす */
+        background: #fff; /* 背景を白に */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* シャドウを追加 */
+        border-radius: 15px; /* 角を丸く */
     }
 
-    /* 料金表の文字サイズ調整 */
+    /* プラン名の強調 */
     .list h4 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--primary-color);
+        color: #333;
     }
 
+    /* 料金の強調 */
+    .list .price {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #333;
+        margin: 1rem 0;
+    }
+
+    /* 説明文の調整 */
     .list p {
-        font-size: 0.9rem;
-        line-height: 1.6;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #666;
+        margin-bottom: 1.5rem;
     }
 
-    /* 番号の位置調整 */
+    /* 特徴リストの調整 */
+    .list ul {
+        margin: 1.5rem 0;
+        padding-left: 1.2rem;
+    }
+
+    .list li {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+        color: #444;
+    }
+
+    /* 番号の位置とスタイル調整 */
     .list .num {
-        font-size: 1.5rem;
-        top: 10px;
-        right: 10px;
+        font-size: 1.8rem;
+        top: 1rem;
+        right: 1.5rem;
+        opacity: 0.2;
+        font-weight: bold;
+    }
+
+    /* プランの区別をつけやすくする */
+    .list.premium {
+        background: linear-gradient(to bottom right, #fff, #f8f9fa);
+        border: 2px solid var(--primary-color);
     }
 }
 
