@@ -716,13 +716,13 @@ footer small {
 /*著作部分（※意図的に見えなくしたりしないで下さい。規約違反になります。）
 ---------------------------------------------------------------------------*/
 .pr a {
-	text-decoration: none;
-	display: block;
-	background: rgba(0,0,0,0.9);
-	text-align: right;
-	padding: 0.5rem 1rem;
-	color: #ccc;
+    background: rgba(0,0,0,0.5);    /* より透明に */
+    padding: 0.3rem 0.8rem;         /* パディングを小さく */
+    color: #ddd;                    /* より明るい色に */
+    font-size: 0.8rem;              /* フォントサイズを小さく */
+    text-align: right;
 }
+
 .pr a::before {
 	font-family: "Font Awesome 6 Free";
 	content: "\e2ca";
@@ -2580,20 +2580,20 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
 @media (max-width: 768px) {
     .list-grid1 {
         grid-template-columns: 1fr;  /* 1列に */
-        gap: 2rem;    /* 間隔を広げる */
+        gap: 1.5rem;  /* 間隔を少し狭める */
     }
 
     .list {
-        padding: 2rem;    /* パディングを増やす */
-        background: #fff; /* 背景を白に */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* シャドウを追加 */
-        border-radius: 15px; /* 角を丸く */
+        padding: 1.5rem;  /* パディングを少し狭める */
+        background: #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 15px;
     }
 
     /* プラン名の強調 */
     .list h4 {
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
         padding-bottom: 1rem;
         border-bottom: 2px solid var(--primary-color);
         color: #333;
@@ -2601,35 +2601,35 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
 
     /* 料金の強調 */
     .list .price {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: bold;
         color: #333;
-        margin: 1rem 0;
+        margin: 0.8rem 0;
     }
 
     /* 説明文の調整 */
     .list p {
-        font-size: 0.95rem;
-        line-height: 1.8;
+        font-size: 0.9rem;
+        line-height: 1.6;
         color: #666;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     /* 特徴リストの調整 */
     .list ul {
-        margin: 1.5rem 0;
+        margin: 1rem 0;
         padding-left: 1.2rem;
     }
 
     .list li {
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.5rem;
         line-height: 1.6;
         color: #444;
     }
 
     /* 番号の位置とスタイル調整 */
     .list .num {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         top: 1rem;
         right: 1.5rem;
         opacity: 0.2;
@@ -2640,6 +2640,14 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
     .list.premium {
         background: linear-gradient(to bottom right, #fff, #f8f9fa);
         border: 2px solid var(--primary-color);
+    }
+
+    /* 画像サイズの最適化 */
+    .list figure img {
+        max-width: 80%;  /* 画像を少し小さく */
+        height: auto;
+        margin: 0 auto;
+        display: block;
     }
 }
 
