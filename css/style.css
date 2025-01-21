@@ -1266,12 +1266,12 @@ footer small {
 
 /*左側ボックスの背景*/
 .list-c2 .list.image1 {
-	background: url("../images/bg_contact.jpg") no-repeat center center / cover;
+	background: url("../images/counseling.jpg") no-repeat center center / cover;
 }
 
 /*右側ボックスの背景*/
 .list-c2 .list.image2 {
-	background: url("../images/bg_request.jpg") no-repeat center center / cover;
+	background: url("../images/line-bg.jpg") no-repeat center center / cover;
 }
 
 /*h4見出し*/
@@ -2709,6 +2709,6 @@ h2 img {
 
 /*list内の画像*/
 .list-c2 .list.image1 {background: url(../images/counseling.jpg) no-repeat center center/cover;}
-.list-c2 .list.image2 {background: url(../images/document.jpg) no-repeat center center/cover;}
+.list-c2 .list.image2 {background: url(../images/line-bg.jpg) no-repeat center center/cover;}
 
 
