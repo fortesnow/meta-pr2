@@ -2658,7 +2658,13 @@ h2 img {
     transform: rotate(-10deg);    /*左に10度傾ける*/
     position: absolute;
     left: -10px;    /*左からの配置場所*/
-    top: -40px;    /*上からの配置場所*/
+    top: -30px;    /*上からの配置場所を調整*/
+}
+
+@media screen and (max-width: 768px) {
+    h2 img {
+        top: -25px;    /* スマホ表示時はさらに下に */
+    }
 }
 
 /*画面幅700px以上の追加指定*/
