@@ -118,7 +118,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color);    /*背景色*/
+    background: #000;    /* 背景を黒に変更 */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,8 +129,9 @@ a:hover {
 
 /*ロゴ画像*/
 #loading img {
-    width: 200px;    /*画像の幅*/
+    width: 250px;    /* ロゴサイズを調整 */
     margin-bottom: 20px;    /*ローディングバーとの間のスペース*/
+    filter: brightness(1.2);  /* ロゴを少し明るく */
 }
 
 /*プログレスバーの土台*/
@@ -2667,5 +2668,47 @@ h2 img {
         left: -10px;     /*左からの配置場所*/
     }
 }
+
+/*list-c2（カウンセリング予約＆資料請求で使用）
+---------------------------------------------------------------------------*/
+.list-c2 {
+    display: grid;
+    gap: 0;
+}
+
+/*画面幅700px以上の追加指定*/
+@media screen and (min-width:700px) {
+    .list-c2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*list内のh4タグ*/
+.list-c2 .list h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*list内のh4タグ内のspan（sub-text）*/
+.list-c2 .list h4 .sub-text {
+    display: block;
+    font-size: 0.7em;
+    opacity: 0.5;
+}
+
+/*list内のh4タグ内のspan（main-text）*/
+.list-c2 .list h4 .main-text {
+    display: block;
+    font-size: 1.2em;
+}
+
+/*list内のテキストブロック*/
+.list-c2 .list .text {
+    padding: 10%;
+}
+
+/*list内の画像*/
+.list-c2 .list.image1 {background: url(../images/counseling.jpg) no-repeat center center/cover;}
+.list-c2 .list.image2 {background: url(../images/document.jpg) no-repeat center center/cover;}
 
 
