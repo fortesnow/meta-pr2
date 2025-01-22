@@ -2835,4 +2835,51 @@ h2 img {
     color: #444;
 }
 
+/*よくある悩みブロック
+---------------------------------------------------------------------------*/
+.list-grid1 .list.bg-black {
+    background: rgba(0,0,0,0.7);    /* より暗い背景色で文字を際立たせる */
+}
+
+.list-grid1 .list.bg-black h4 {
+    color: var(--primary-color);    /* アクセントカラーで強調 */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);    /* テキストシャドウで視認性向上 */
+}
+
+.list-grid1 .list.bg-black p {
+    color: #eee;    /* より明るい文字色 */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);    /* テキストシャドウで視認性向上 */
+    line-height: 1.8;    /* 行間を広げて読みやすく */
+}
+
+/* スマートフォン対応の追加 */
+@media (max-width: 768px) {
+    .list-grid1 .list.bg-black {
+        background: rgba(0,0,0,0.7);    /* スマホでも同じ背景色を維持 */
+        padding: 2rem;    /* パディングを調整 */
+        margin-bottom: 1.5rem;    /* 下マージンを追加 */
+    }
+    
+    .list-grid1 .list.bg-black h4 {
+        font-size: 1.1rem;    /* スマホでの文字サイズを調整 */
+        margin-bottom: 1rem;
+    }
+    
+    .list-grid1 .list.bg-black p {
+        font-size: 0.9rem;    /* スマホでの本文サイズを調整 */
+    }
+    
+    /* アイコンのサイズ調整 */
+    .list-grid1 .list.bg-black figure.icon img {
+        width: 50px;    /* スマホでのアイコンサイズを調整 */
+        margin-bottom: 1rem;
+    }
+    
+    /* 番号の位置調整 */
+    .list-grid1 .list.bg-black .num {
+        font-size: 1.2rem;
+        opacity: 0.3;
+    }
+}
+
 
