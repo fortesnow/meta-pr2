@@ -3165,4 +3165,85 @@ h2 img {
     }
 }
 
+/* 料金プランセクション
+---------------------------------------------------------------------------*/
+.price-section {
+    background: #f8f9fa;
+    padding: 5rem var(--space-large);
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+.price-item {
+    background: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.price-item:hover {
+    transform: translateY(-5px);
+}
+
+.price-item.popular {
+    border: 2px solid var(--primary-color);
+    padding-top: 3rem;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+    .price-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0.5rem 1rem 2rem;
+        margin: 2rem -1rem;
+    }
+    
+    .price-item {
+        padding: 1.8rem;
+    }
+}
+
+.minimum-price {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.price-notes {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.03);
+    border-radius: 10px;
+}
+
+.price-notes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.price-notes li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.price-notes i {
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
 
