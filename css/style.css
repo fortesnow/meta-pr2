@@ -1225,43 +1225,56 @@ footer small {
 
 /*ボックス１個あたり*/
 .list-c2 .list {
-	text-align: center;
-	position: relative;
-	overflow-y: hidden;
-	color: #fff;		/*文字色*/
-	text-shadow: 0px 0px 10px rgba(0,0,0,0.6);	/*テキストの影。右へ、下へ、ぼかす量、0,0,0は黒のことで0.6は色が出た状態。*/
-	padding: 5rem 2rem;	/*上下、左右へのボックス内の余白*/
-	margin: 1rem 0;		/*上下、左右へのマージン*/
-	border-radius: 30px;	/*角を丸くする指定*/
+    text-align: center;
+    position: relative;
+    overflow-y: hidden;
+    color: #fff;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+    padding: 4rem 2rem;    /* パディングを少し調整 */
 }
 
-	/*画面幅600px以上の追加指定*/
-	@media screen and (min-width:600px) {
-	
-	.list-c2 > * {
-		flex: 1;
+	/* スマートフォン対応を追加 */
+	@media (max-width: 768px) {
+		.list-c2 .list {
+			background-color: rgba(0, 0, 0, 0.4);    /* 背景に暗いオーバーレイを追加 */
+			padding: 3rem 1.5rem;    /* スマホ用にパディングを調整 */
+		}
+		
+		.list-c2 .list .text {
+			position: relative;
+			z-index: 2;    /* テキストを前面に */
+		}
+		
+		.list-c2 h4 {
+			margin-bottom: 1.5rem;    /* 見出しの下マージンを増やす */
+		}
+		
+		.list-c2 h4 .main-text {
+			font-size: 2.5rem;    /* メインテキストのサイズを調整 */
+			font-weight: bold;    /* 太字に */
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.8);    /* シャドウを強く */
+		}
+		
+		.list-c2 h4 .sub-text {
+			font-size: 1rem;    /* サブテキストのサイズを調整 */
+			opacity: 0.9;    /* 透明度を下げて見やすく */
+			margin-bottom: 0.5rem;    /* 下マージンを追加 */
+		}
+		
+		.list-c2 .list p {
+			font-size: 0.9rem;    /* 本文のサイズを調整 */
+			line-height: 1.8;    /* 行間を広げる */
+			margin-bottom: 1.5rem;    /* 下マージンを追加 */
+			text-shadow: 1px 1px 3px rgba(0,0,0,0.9);    /* シャドウを強く */
+		}
+		
+		/* ボタンのスタイルも調整 */
+		.list-c2 .list .btn1 a {
+			padding: 1rem 2rem;    /* パディングを調整 */
+			font-weight: bold;    /* 太字に */
+			font-size: 1rem;    /* サイズ調整 */
+		}
 	}
-	.list-c2 .list {
-		margin: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.list-c2 > a .list {
-		height: 100%;
-	}
-	
-	/*1つ目のボックス（お問い合わせ）*/
-	.list-c2 .list:nth-of-type(1) {
-		border-radius: 0px 30px 30px 0px;	/*角丸の上書き。左上、右上、右下、左下への順番。*/
-	}
-	
-	/*2つ目のボックス（資料請求）*/
-	.list-c2 .list:nth-of-type(2) {
-		border-radius: 30px 0px 0px 30px;	/*角丸の上書き。左上、右上、右下、左下への順番。*/
-	}
-	
-	}/*追加指定ここまで*/
 
 
 /*左側ボックスの背景*/
@@ -2675,109 +2688,191 @@ h2 img {
     }
 }
 
-/*list-c2（カウンセリング予約＆資料請求で使用）
+/*list-c2（カウンセリング予約＆LINE追加で使用）
 ---------------------------------------------------------------------------*/
-.list-c2 {
-    display: grid;
-    gap: 0;
+.list-c2 .list {
+    position: relative;
+    overflow-y: hidden;
+    color: #fff;
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+    padding: 4rem 2rem;
 }
 
-/*画面幅700px以上の追加指定*/
-@media screen and (min-width:700px) {
-    .list-c2 {
-        grid-template-columns: repeat(2, 1fr);
+/* スマートフォン対応を追加 */
+@media (max-width: 768px) {
+    .list-c2 .list {
+        position: relative;
+        padding: 3rem 1.5rem;
+    }
+    
+    /* 暗いオーバーレイを追加 */
+    .list-c2 .list::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);    /* 背景を暗く */
+        z-index: 1;
+    }
+    
+    /* テキストを前面に */
+    .list-c2 .list .text {
+        position: relative;
+        z-index: 2;
+        padding: 0;
+    }
+    
+    /* 見出しのスタイル */
+    .list-c2 .list h4 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .list-c2 .list h4 .sub-text {
+        font-size: 1.2rem;
+        opacity: 1;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    
+    .list-c2 .list h4 .main-text {
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    
+    /* 説明文のスタイル */
+    .list-c2 .list p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+    }
+    
+    /* ボタンのスタイル */
+    .list-c2 .list .btn1 a {
+        display: inline-block;
+        padding: 1rem 3rem;
+        font-weight: bold;
+        font-size: 1.1rem;
+        background: var(--primary-color);
+        color: #000;
+        border-radius: 50px;
+        text-shadow: none;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.2);
     }
 }
 
-/*list内のh4タグ*/
-.list-c2 .list h4 {
-    text-align: center;
-    margin-bottom: 20px;
+/* メインビジュアルのスマホ最適化 */
+@media (max-width: 768px) {
+    /* メインビジュアルの調整 */
+    #mainimg {
+        height: 100vh;  /* 画面の高さいっぱいに */
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(../images/mainimg.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    
+    /* メインコピーの強調 */
+    #mainimg .text .rpg-text {
+        font-size: 2.2rem;
+        font-weight: bold;
+        line-height: 1.4;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 2rem;
+    }
+    
+    /* CTAボタンの強調 */
+    #mainimg .btn.rpg-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    #mainimg .btn.rpg-buttons a {
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* お悩みセクションの改善 */
+    .bg1.bg-pattern1 {
+        background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+        padding: 3rem 1.5rem;
+    }
+    
+    .list-grid1 .list.bg-black {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .list-grid1 .list.bg-black h4 {
+        font-size: 1.3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+    
+    /* メリットセクションの改善 */
+    .benefits-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .benefit-item {
+        background: #fff;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .benefit-item h3 {
+        font-size: 1.2rem;
+        color: #333;
+        margin: 1rem 0;
+    }
+    
+    /* 実績セクションの改善 */
+    .media-section {
+        background: linear-gradient(to bottom, #f8f9fa, #fff);
+        padding: 3rem 1.5rem;
+    }
+    
+    .media-item {
+        background: #fff;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
 }
 
-/*list内のh4タグ内のspan（sub-text）*/
-.list-c2 .list h4 .sub-text {
-    display: block;
-    font-size: 0.7em;
-    opacity: 0.5;
-}
-
-/*list内のh4タグ内のspan（main-text）*/
-.list-c2 .list h4 .main-text {
-    display: block;
-    font-size: 1.2em;
-}
-
-/*list内のテキストブロック*/
-.list-c2 .list .text {
-    padding: 10%;
-}
-
-/*list内の画像*/
-.list-c2 .list.image1 {background: url(../images/counseling.jpg) no-repeat center center/cover;}
-.list-c2 .list.image2 {background: url(../images/line-bg.jpg) no-repeat center center/cover;}
-
-/*よくある悩みブロック
----------------------------------------------------------------------------*/
-.balloon4 {
-    position: relative;
-    background: rgba(0,0,0,0.7);    /* より暗い背景色で文字を際立たせる */
-    padding: 2rem;                        /*余白*/
-    margin: 3rem 1rem 0px;                /*上、左右、下への余白*/
-    border-radius: 10px;                /*角丸のサイズ*/
-    color: #eee;                        /* より明るい文字色 */
-    font-size: 0.9rem;                    /*文字サイズ*/
-    text-align: center;                /*文字をセンタリング*/
-}
-
-/*list内のh4タグ*/
-.balloon4 h4 {
-    font-size: 1.2rem;        /*文字サイズ*/
-    margin: 0;
-    padding: 0;
-    color: var(--primary-color);    /* アクセントカラーで強調 */
-    margin-bottom: 1rem;    /* 見出しと本文の間隔を確保 */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);    /* テキストシャドウで視認性向上 */
-}
-
-/*list内のpタグ*/
-.balloon4 p {
-    margin: 0;
-    padding: 0;
-    line-height: 1.8;    /* 行間を広げて読みやすく */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);    /* テキストシャドウで視認性向上 */
-}
-
-/*list内のulタグ*/
-.balloon4 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    margin-top: 1rem;        /*上に空けるスペース*/
-}
-
-.balloon4 li {
-    display: inline-block;    /*横並びにする*/
-    margin: 3px;            /*上下、左右に空けるスペース*/
-    font-size: 0.7rem;        /*文字サイズ*/
-    background: var(--primary-color);    /* アクセントカラーで強調 */
-    padding: 0.2rem 0.5rem;    /*上下、左右への余白*/
-    border-radius: 3px;        /*角丸のサイズ*/
-    color: #000;    /* 背景色に合わせて文字色を調整 */
-}
-
-
-/*広告運用のメリット
+/* 広告運用のメリットセクション
 ---------------------------------------------------------------------------*/
 .benefits-section {
     background: #f8f9fa;
-    padding: 5rem var(--space-large);
+    padding: 4rem 2rem;
+    margin: 2rem 0;
 }
 
 .benefits-grid {
     display: grid;
     gap: 2rem;
-    margin: 3rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -2788,97 +2883,106 @@ h2 img {
 
 .benefit-item {
     background: #fff;
-    padding: 2rem;
     border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .benefit-icon {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin: 1rem 0 2rem;
 }
 
 .benefit-item h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #333;
+    font-weight: bold;
 }
 
 .benefit-item p {
     font-size: 0.9rem;
     color: #666;
     line-height: 1.8;
+    margin: 0;
 }
 
 .benefits-summary {
     background: rgba(129, 232, 237, 0.1);
     padding: 2rem;
     border-radius: 15px;
-    margin-top: 3rem;
+    margin: 3rem auto;
+    max-width: 800px;
 }
 
 .benefits-summary h3 {
     color: #333;
     margin-bottom: 1rem;
     text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .benefits-summary ul {
     margin: 1.5rem 0;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
+    list-style-type: none;
 }
 
 .benefits-summary li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     color: #444;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
-/*よくある悩みブロック
----------------------------------------------------------------------------*/
-.list-grid1 .list.bg-black {
-    background: rgba(0,0,0,0.7);    /* より暗い背景色で文字を際立たせる */
+.benefits-summary li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
-.list-grid1 .list.bg-black h4 {
-    color: var(--primary-color);    /* アクセントカラーで強調 */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);    /* テキストシャドウで視認性向上 */
-}
-
-.list-grid1 .list.bg-black p {
-    color: #eee;    /* より明るい文字色 */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);    /* テキストシャドウで視認性向上 */
-    line-height: 1.8;    /* 行間を広げて読みやすく */
-}
-
-/* スマートフォン対応の追加 */
-@media (max-width: 768px) {
-    .list-grid1 .list.bg-black {
-        background: rgba(0,0,0,0.7);    /* スマホでも同じ背景色を維持 */
-        padding: 2rem;    /* パディングを調整 */
-        margin-bottom: 1.5rem;    /* 下マージンを追加 */
+/* スマートフォン対応 */
+@media (max-width: 767px) {
+    .benefits-section {
+        padding: 3rem 1.5rem;
     }
     
-    .list-grid1 .list.bg-black h4 {
-        font-size: 1.1rem;    /* スマホでの文字サイズを調整 */
-        margin-bottom: 1rem;
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
-    .list-grid1 .list.bg-black p {
-        font-size: 0.9rem;    /* スマホでの本文サイズを調整 */
+    .benefit-item {
+        padding: 1.5rem;
+        margin-bottom: 0;
     }
     
-    /* アイコンのサイズ調整 */
-    .list-grid1 .list.bg-black figure.icon img {
-        width: 50px;    /* スマホでのアイコンサイズを調整 */
-        margin-bottom: 1rem;
+    .benefit-icon {
+        font-size: 2rem;
+        margin: 0.5rem 0 1rem;
     }
     
-    /* 番号の位置調整 */
-    .list-grid1 .list.bg-black .num {
-        font-size: 1.2rem;
-        opacity: 0.3;
+    .benefits-summary {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+    
+    .benefits-summary ul {
+        padding-left: 1rem;
+    }
+    
+    .benefits-summary li {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
     }
 }
 
