@@ -2717,4 +2717,122 @@ h2 img {
 .list-c2 .list.image1 {background: url(../images/counseling.jpg) no-repeat center center/cover;}
 .list-c2 .list.image2 {background: url(../images/line-bg.jpg) no-repeat center center/cover;}
 
+/*よくある悩みブロック
+---------------------------------------------------------------------------*/
+.balloon4 {
+    position: relative;
+    background: rgba(0,0,0,0.7);    /* より暗い背景色で文字を際立たせる */
+    padding: 2rem;                        /*余白*/
+    margin: 3rem 1rem 0px;                /*上、左右、下への余白*/
+    border-radius: 10px;                /*角丸のサイズ*/
+    color: #eee;                        /* より明るい文字色 */
+    font-size: 0.9rem;                    /*文字サイズ*/
+    text-align: center;                /*文字をセンタリング*/
+}
+
+/*list内のh4タグ*/
+.balloon4 h4 {
+    font-size: 1.2rem;        /*文字サイズ*/
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color);    /* アクセントカラーで強調 */
+    margin-bottom: 1rem;    /* 見出しと本文の間隔を確保 */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);    /* テキストシャドウで視認性向上 */
+}
+
+/*list内のpタグ*/
+.balloon4 p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;    /* 行間を広げて読みやすく */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);    /* テキストシャドウで視認性向上 */
+}
+
+/*list内のulタグ*/
+.balloon4 ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 1rem;        /*上に空けるスペース*/
+}
+
+.balloon4 li {
+    display: inline-block;    /*横並びにする*/
+    margin: 3px;            /*上下、左右に空けるスペース*/
+    font-size: 0.7rem;        /*文字サイズ*/
+    background: var(--primary-color);    /* アクセントカラーで強調 */
+    padding: 0.2rem 0.5rem;    /*上下、左右への余白*/
+    border-radius: 3px;        /*角丸のサイズ*/
+    color: #000;    /* 背景色に合わせて文字色を調整 */
+}
+
+
+/*広告運用のメリット
+---------------------------------------------------------------------------*/
+.benefits-section {
+    background: #f8f9fa;
+    padding: 5rem var(--space-large);
+}
+
+.benefits-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+@media screen and (min-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.benefit-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.benefit-item p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.benefits-summary {
+    background: rgba(129, 232, 237, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.benefits-summary h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.benefits-summary ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.benefits-summary li {
+    margin-bottom: 0.8rem;
+    color: #444;
+}
+
 
