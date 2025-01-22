@@ -3246,4 +3246,57 @@ h2 img {
     color: var(--primary-color);
 }
 
+/* 料金プランのボタンスタイル
+---------------------------------------------------------------------------*/
++ .price-item .btn {
++     display: block;
++     text-align: center;
++     padding: 1.2rem;
++     margin-top: 2rem;
++     background: #333;
++     color: #fff;
++     border-radius: 50px;
++     font-weight: bold;
++     transition: all 0.3s ease;
++     text-decoration: none;
++     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
++ }
++ 
++ .price-item .btn:hover {
++     transform: translateY(-3px);
++     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
++     opacity: 0.9;
++ }
++ 
++ /* 人気プランのボタン強調 */
++ .price-item.popular .btn {
++     background: var(--primary-color);
++     color: #000;
++     font-size: 1.1rem;
++ }
++ 
++ /* スマートフォン対応 */
+@media (max-width: 768px) {
+    .price-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0.5rem 1rem 2rem;
+        margin: 2rem -1rem;
+    }
+    
+    .price-item {
+        padding: 1.8rem;
+    }
+    
++   .price-item .btn {
++       padding: 1rem;
++       margin-top: 1.5rem;
++       font-size: 1rem;
++   }
++   
++   .price-item.popular .btn {
++       font-size: 1rem;
++   }
+}
+
 
