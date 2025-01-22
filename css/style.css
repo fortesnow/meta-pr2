@@ -2797,28 +2797,30 @@ h2 img {
 @media (max-width: 768px) {
     /* メインビジュアルの調整 */
     #mainimg {
-        height: 90vh;  /* 画面の高さを少し調整 */
+        min-height: 100vh;  /* 最小の高さを画面いっぱいに */
         background: linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.5)
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.65)
         ), url(../images/mainimg.jpg);
         background-size: cover;
-        background-position: center;
+        background-position: center 20%;  /* 背景画像の位置を少し上に */
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 2rem;
+        padding: 4rem 1.5rem;  /* 上下のパディングを増やし、左右を調整 */
+        position: relative;
     }
     
     /* メインコピーの強調 */
     #mainimg .text .rpg-text {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: bold;
         line-height: 1.6;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
         margin-bottom: 3rem;
         color: #fff;
         letter-spacing: 0.05em;
+        padding: 0 0.5rem;
     }
     
     /* CTAボタンの強調 */
@@ -2826,40 +2828,47 @@ h2 img {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        width: 85%;
+        width: 90%;
         margin: 0 auto;
+        position: relative;
+        z-index: 3;
     }
     
     #mainimg .btn.rpg-buttons a {
-        padding: 1.2rem 2rem;
+        padding: 1.4rem 2rem;
         font-size: 1.1rem;
         font-weight: bold;
         border-radius: 50px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
         display: flex;
         align-items: center;
         justify-content: center;
         background: var(--primary-color);
         color: #000;
         transition: all 0.3s ease;
+        margin: 0 1rem;
     }
     
-    #mainimg .btn.rpg-buttons a:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-    }
-    
-    #mainimg .btn.rpg-buttons a i {
-        margin-right: 8px;
-        font-size: 1.2rem;
-    }
-    
-    /* iPhoneの安全領域に対応 */
-    @supports (-webkit-touch-callout: none) {
+    /* iPhoneのノッチ対応 */
+    @supports (padding-top: env(safe-area-inset-top)) {
         #mainimg {
-            padding-bottom: env(safe-area-inset-bottom);
-            padding-top: calc(env(safe-area-inset-top) + 2rem);
+            padding-top: calc(4rem + env(safe-area-inset-top));
+            padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+            padding-left: calc(1.5rem + env(safe-area-inset-left));
+            padding-right: calc(1.5rem + env(safe-area-inset-right));
         }
+    }
+    
+    /* 背景画像の暗いオーバーレイ */
+    #mainimg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
     }
     
     /* お悩みセクションの改善 */
@@ -2915,6 +2924,15 @@ h2 img {
         padding: 1.5rem;
         margin-bottom: 1.5rem;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* メインビジュアルの調整 */
+    #mainimg > div {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
     }
 }
 
