@@ -345,10 +345,11 @@ header nav ul ul a {
     width: 100%;
     height: 100%;
     padding: 6rem 2rem 2rem;
-    background: #000;    /* 完全に不透明な背景に変更 */
-    color: #fff;
+    background: rgba(255, 255, 255, 0.98);
+    color: #333;
     animation: animation1 0.2s both;
-    backdrop-filter: none;    /* 透過効果を削除 */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 #menubar ul {
@@ -392,7 +393,7 @@ a.ddmenu::before {
 @keyframes animation1 {
 	0% {
         opacity: 0;
-        transform: translateY(20px);    /* アニメーションを控えめに */
+        transform: translateX(-20px);
     }
     100% {
         opacity: 1;
@@ -448,8 +449,9 @@ a.ddmenu::before {
 	flex-direction: column;
 	justify-content: space-between;
 	transform-origin: right top;
-	background: var(--rpg-window);	/*背景色。冒頭のrpg-windowを読み込みます。*/
+	background: rgba(255,255,255,0.9);
 	border-radius: 0px 0px 0px 10px;		/*角を丸くする指定。左上、右上、右下、左下への順番。*/
+	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 	/*画面700px以上の追加指定*/
@@ -467,6 +469,7 @@ a.ddmenu::before {
 	display: block;
 	transition: 0.3s;	/*アニメーションにかける時間。0.3秒。*/
 	border-top: 1.5px solid var(--base-color);	/*線の幅、線種、varは色のことで冒頭のbase-colorを読み込みます。*/
+	background: #333;
 }
 
 /*×印が出ている状態の3本バーの背景色*/
@@ -2293,7 +2296,7 @@ pre {white-space: pre-wrap;word-wrap: break-word;overflow-wrap: break-word;}
 
 .price-table th.popular {
     position: relative;
-    background: #f8ffff;
+    background: #f8f9fa;
 }
 
 .popular-badge {
@@ -3075,17 +3078,18 @@ h2 img {
     width: 100%;
     height: 100%;
     padding: 6rem 2rem 2rem;
-    background: #000;    /* 完全に不透明な背景に変更 */
-    color: #fff;
+    background: rgba(255, 255, 255, 0.98);
+    color: #333;
     animation: animation1 0.2s both;
-    backdrop-filter: none;    /* 透過効果を削除 */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 /* メニューリストのスタイル修正 */
 #menubar nav {
     max-width: 800px;
     margin: 0 auto;
-    background: #000;    /* メニュー背景も完全不透明に */
+    background: transparent;
 }
 
 #menubar nav ul {
@@ -3098,31 +3102,35 @@ h2 img {
 }
 
 #menubar nav ul li a {
-    color: #fff;
+    color: #333;
     display: block;
     padding: 1rem;
     font-size: 1.2rem;
     text-decoration: none;
     transition: 0.3s;
     border-radius: 5px;
-    background: #000;    /* メニュー項目の背景も不透明に */
+    background: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 #menubar nav ul li a:hover {
-    background: #1a1a1a;    /* ホバー時の背景も明確に */
-    color: var(--primary-color);    /* ホバー時の文字色を変更 */
+    background: rgba(129, 232, 237, 0.1);
+    color: var(--primary-color);
+    transform: translateX(5px);
 }
 
 /* サブメニューの修正 */
 #menubar nav ul ul {
     margin: 0.5rem 0 0.5rem 1.5rem;
     gap: 0.5rem;
-    background: #000;    /* サブメニューの背景も不透明に */
+    background: rgba(255,255,255,0.5);
+    border-radius: 8px;
 }
 
 #menubar nav ul ul li a {
     font-size: 1rem;
     padding: 0.7rem 1rem;
+    border-bottom: none;
 }
 
 /* 説明文の位置調整 */
@@ -3131,41 +3139,25 @@ h2 img {
     margin: 2rem auto;
     padding: 1rem;
     font-size: 0.9rem;
-    color: #999;    /* テキストの色をより明確に */
+    color: #666;
     text-align: left;
 }
 
-/* スマートフォン対応 */
-@media (max-width: 768px) {
-    #menubar {
-        padding: 5rem 1.5rem 1.5rem;
-    }
-    
-    #menubar nav ul li a {
-        font-size: 1.1rem;
-        padding: 0.8rem;
-    }
-    
-    #menubar nav ul ul {
-        margin: 0.3rem 0 0.3rem 1rem;
-    }
-    
-    #menubar nav ul ul li a {
-        font-size: 0.9rem;
-        padding: 0.6rem 0.8rem;
-    }
-    
-    #menubar p {
-        padding: 0.8rem;
-        font-size: 0.85rem;
-    }
+/* ハンバーガーアイコンの色変更 */
+#menubar_hdr {
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#menubar_hdr span {
+    background: #333;
 }
 
 /* アニメーションの調整 */
 @keyframes animation1 {
     0% {
         opacity: 0;
-        transform: translateY(20px);    /* アニメーションを控えめに */
+        transform: translateX(-20px);
     }
     100% {
         opacity: 1;
