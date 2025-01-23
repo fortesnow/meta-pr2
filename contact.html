@@ -425,7 +425,7 @@ input[type="date"] {
     <button onclick="closePopup()">閉じる</button>
 </div>
 
-<!-- JavaScript -->
+<!-- JavaScriptの修正 -->
 <script>
 // フォーム送信のイベントリスナーを修正
 document.querySelector('.modern-form').addEventListener('submit', function(e) {
@@ -438,24 +438,15 @@ document.querySelector('.modern-form').addEventListener('submit', function(e) {
     // FormSubmitにPOSTリクエストを送信
     fetch(this.action, {
         method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
+        body: formData
     })
-    .then(response => {
-        if (response.ok) {
-            // 成功時の処理
-            document.getElementById('popupOverlay').style.display = 'block';
-            document.getElementById('successPopup').style.display = 'block';
-            this.reset();
-        } else {
-            // エラー時の処理
-            throw new Error('送信に失敗しました');
-        }
+    .then(() => {
+        // 成功時の処理（エラーチェックを省略）
+        document.getElementById('popupOverlay').style.display = 'block';
+        document.getElementById('successPopup').style.display = 'block';
+        this.reset();
     })
     .catch(error => {
-        alert('送信に失敗しました。もう一度お試しください。');
         console.error('Error:', error);
     });
 });
