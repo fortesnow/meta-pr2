@@ -103,11 +103,14 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
             </div>
         </div>
 
-        <form class="modern-form" action="https://formsubmit.co/bluestellarium@gmail.com" method="POST" onsubmit="return submitForm(event)">
+        <form class="modern-form" action="https://formsubmit.co/bluestellarium@gmail.com" method="POST">
             <!-- FormSubmitの設定 -->
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="none">
+            <input type="hidden" name="_next" value="https://stellarium.jp/thanks.html">
             <input type="hidden" name="_subject" value="新規相談予約">
+            <input type="hidden" name="_template" value="table">
+            <!-- honeypot -->
+            <input type="text" name="_honey" style="display:none">
 
             <div class="form-group">
                 <label for="company">会社名<span class="required">※</span></label>
@@ -424,27 +427,38 @@ input[type="date"] {
 
 <!-- JavaScript -->
 <script>
-function submitForm(event) {
-    event.preventDefault();
+// フォーム送信のイベントリスナーを修正
+document.querySelector('.modern-form').addEventListener('submit', function(e) {
+    // フォームのデフォルトの送信を防止
+    e.preventDefault();
     
-    const form = event.target;
-    const formData = new FormData(form);
+    // フォームデータを取得
+    const formData = new FormData(this);
     
-    fetch(form.action, {
+    // FormSubmitにPOSTリクエストを送信
+    fetch(this.action, {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
     })
     .then(response => {
-        document.getElementById('popupOverlay').style.display = 'block';
-        document.getElementById('successPopup').style.display = 'block';
-        form.reset();
+        if (response.ok) {
+            // 成功時の処理
+            document.getElementById('popupOverlay').style.display = 'block';
+            document.getElementById('successPopup').style.display = 'block';
+            this.reset();
+        } else {
+            // エラー時の処理
+            throw new Error('送信に失敗しました');
+        }
     })
     .catch(error => {
         alert('送信に失敗しました。もう一度お試しください。');
+        console.error('Error:', error);
     });
-    
-    return false;
-}
+});
 
 function closePopup() {
     document.getElementById('popupOverlay').style.display = 'none';
