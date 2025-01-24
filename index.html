@@ -946,22 +946,12 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 <ul>
 <li><a href="index.html">ホーム</a></li>
 <li><a href="#koe">お客様の声</a></li>
-<li><a href="#products">制作実績</a>
-	<ul>
-	<li><a href="#">ドロップダウンメニュー</a></li>
-	<li><a href="#">ドロップダウンメニュー</a></li>
-	<li><a href="#">ドロップダウンメニュー</a></li>
-	</ul>
-</li>
 <li><a href="#plan">料金プラン</a></li>
 <li><a href="#faq">よく頂く質問</a></li>
 <li><a href="#flow">制作の流れ</a></li>
 <li><a href="contact.html">お問い合わせ</a></li>
 </ul>
 </nav>
-
-<p>ここのブロックは、htmlの下の方にある&lt;div id=&quot;menubar&quot;&gt;で編集できます。<br>
-ヘッダーのメニューとは別のブロックになるので注意して下さい。</p>
 
 </div>
 <!--/#menubar-->
@@ -977,6 +967,82 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 <!--このテンプレート専用のスクリプト-->
 <script src="js/main.js"></script>
+
+<style>
+/* ハンバーガーメニューの色とデザインを改善 */
+#menubar_hdr {
+    background: rgba(0,0,0,0.9);
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+#menubar_hdr span {
+    background: #fff;
+    height: 2px;
+}
+
+/* メニューを開いた時の背景色と文字色を調整 */
+#menubar {
+    background: linear-gradient(135deg, rgba(0,0,0,0.97), rgba(20,20,20,0.97));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#menubar a {
+    color: #fff;
+    font-weight: normal;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+#menubar a:hover {
+    background: rgba(129,232,237,0.15);
+    padding-left: 25px;
+}
+
+/* ロゴの余白調整 */
+#menubar .logo {
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+}
+
+/* メニュー項目のスタイル調整 */
+#menubar nav ul li {
+    margin-bottom: 0;
+}
+
+#menubar nav ul li a {
+    position: relative;
+    display: block;
+    padding: 15px 35px 15px 20px;
+}
+
+/* 矢印アイコンのスタイル */
+#menubar nav ul li a::after {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    color: #81e8ed;
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+#menubar nav ul li a:hover::after {
+    transform: translateX(5px);
+}
+
+@media screen and (max-width: 768px) {
+    #menubar_hdr {
+        top: 15px;
+        right: 15px;
+    }
+}
+</style>
 
 </body>
 </html>
