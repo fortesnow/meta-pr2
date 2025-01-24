@@ -88,31 +88,31 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 
 
-<!--▼▼▼▼▼ここから「事業者としてのよくある悩み」-->
+<!--▼▼▼▼▼ここから「売上増加、集客施策で無視できない問題点」-->
 <section class="bg1 bg-pattern1">
 
-<h2 class="c">事業者としてのよくある悩み<span>Common Issues</span></h2>
+<h2 class="c">売上増加、集客施策で無視できない問題点<span>Critical Issues</span></h2>
 
 <div class="list-grid1">
 
 <div class="list bg-white up">
 <figure class="icon"><img src="images/icon1.png" alt=""></figure>
-<h4><span class="marker">若い世代への集客が難しい</span></h4>
-<p>チラシや新聞広告だけでは、若い世代にアプローチできていない。SNSでの広告は始めたものの、効果が出ているのか分からない状況です。</p>
+<h4><span class="marker">従来の広告では若年層にリーチできない</span></h4>
+<p>新聞やチラシなど従来型の広告では、デジタルネイティブ世代への訴求が難しく、将来的な顧客基盤が築けない状況です。このままでは、年々売上が減少するリスクがあります。</p>
 <span class="num">01</span>
 </div>
 
 <div class="list bg-white up">
 <figure class="icon"><img src="images/icon2.png" alt=""></figure>
-<h4><span class="marker">広告費用の使い方が不安</span></h4>
-<p>インターネット広告に予算を使っているが、本当に効果的な使い方ができているのか不安。費用対効果を実感できていません。</p>
+<h4><span class="marker">広告費用が高騰し、投資効果が見えない</span></h4>
+<p>テレビCMや紙媒体の広告費用は年々上昇。一方で、効果測定が難しく、投資に見合う成果が出ているのか判断できません。広告予算の最適な配分ができていない可能性があります。</p>
 <span class="num">02</span>
 </div>
 
 <div class="list bg-white up">
 <figure class="icon"><img src="images/icon3.png" alt=""></figure>
-<h4><span class="marker">担当者任せで管理できていない</span></h4>
-<p>若手社員に任せているが、専門用語が多く内容を把握できない。効果の判断や予算管理が適切にできているか心配です。</p>
+<h4><span class="marker">競合他社のデジタル化に後れを取る</span></h4>
+<p>業界内でSNSやネット広告を活用する企業が増加中。対応が遅れると、市場シェアを奪われるリスクが高まります。社内にノウハウがなく、どこから手をつければよいか分からない状況です。</p>
 <span class="num">03</span>
 </div>
 
@@ -120,7 +120,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 <!--/.list-grid1-->
 
 </section>
-<!--▲▲▲▲▲ここまで「事業者としてのよくある悩み」-->
+<!--▲▲▲▲▲ここまで「売上増加、集客施策で無視できない問題点」-->
 
 <!--▼▼▼▼▼ここから「デジタルシフトの波」-->
 <section class="bg3 bg-pattern3" id="digital-shift">
@@ -193,12 +193,14 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 }
 
 .stat-number {
-    font-size: 3em;
+    font-size: 3.2em;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
     display: block;
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    line-height: 1.2;
 }
 
 .digital-shift-message {
@@ -263,7 +265,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 @media screen and (max-width: 768px) {
     .stat-number {
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
     
     .digital-shift-message {
@@ -289,27 +291,50 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 .cta-section {
     padding: 60px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .bg-gradient {
-    background: linear-gradient(135deg, #81e8ed20, #81e8ed40);
+    background: linear-gradient(135deg, rgba(129,232,237,0.15), rgba(129,232,237,0.25));
+}
+
+.bg-pattern-dark {
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95));
+    position: relative;
+}
+
+.bg-pattern-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/pattern.jpg') center/cover;
+    opacity: 0.1;
+    z-index: 0;
 }
 
 .cta-container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .cta-section h3 {
     font-size: 1.8em;
     margin-bottom: 15px;
     font-weight: bold;
+    line-height: 1.4;
 }
 
 .cta-section p {
     font-size: 1.1em;
     margin-bottom: 30px;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
 .cta-buttons {
@@ -322,41 +347,95 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 .cta-button {
     display: inline-flex;
     align-items: center;
-    padding: 15px 30px;
-    border-radius: 5px;
+    justify-content: center;
+    padding: 18px 32px;
+    border-radius: 100px;
     font-weight: bold;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    min-width: 240px;
+    background: linear-gradient(135deg, #81e8ed, #65b6ff);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(129,232,237,0.3);
+    position: relative;
+    overflow: hidden;
 }
 
-.cta-button:hover {
-    transform: translateY(-3px);
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-.cta-button i {
-    margin-right: 10px;
-}
-
-.cta-button.primary {
-    background: #81e8ed;
-    color: #333;
+.cta-button:hover::before {
+    opacity: 1;
 }
 
 .cta-button.secondary {
     background: #06C755;
-    color: white;
 }
 
+.cta-button i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* モバイル最適化 */
 @media screen and (max-width: 768px) {
     .cta-section {
         padding: 40px 15px;
     }
     
     .cta-section h3 {
-        font-size: 1.5em;
+        font-size: 1.4em;
+        padding: 0 10px;
+    }
+    
+    .cta-section p {
+        font-size: 1em;
+        padding: 0 15px;
+        margin-bottom: 25px;
     }
     
     .cta-buttons {
         flex-direction: column;
+        gap: 12px;
+        padding: 0 15px;
+    }
+    
+    .cta-button {
+        width: 100%;
+        min-width: auto;
+        padding: 16px 24px;
+        font-size: 0.95em;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #81e8ed, #65b6ff);
+        box-shadow: 0 4px 12px rgba(129,232,237,0.25);
+    }
+    
+    .cta-button::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255,255,255,0.1), transparent);
+        pointer-events: none;
+    }
+    
+    .cta-button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(129,232,237,0.2);
+    }
+    
+    .cta-button i {
+        font-size: 1.1em;
     }
 }
 </style>
@@ -1064,77 +1143,61 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 <script src="js/main.js"></script>
 
 <style>
-/* ハンバーガーメニューの色とデザインを改善 */
-#menubar_hdr {
-    background: rgba(0,0,0,0.9);
-    border-radius: 3px;
-    border: 1px solid rgba(255,255,255,0.2);
+/* 全セクション共通の数字スタイル */
+.list-grid1 .list .num,
+.stat-number,
+.flow .list h4 i {
+    color: #ffffff;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    opacity: 0.9;
 }
 
-#menubar_hdr span {
-    background: #fff;
-    height: 2px;
-}
-
-/* メニューを開いた時の背景色と文字色を調整 */
-#menubar {
-    background: linear-gradient(135deg, rgba(0,0,0,0.97), rgba(20,20,20,0.97));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-#menubar a {
-    color: #fff;
-    font-weight: normal;
-    padding: 15px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-}
-
-#menubar a:hover {
-    background: rgba(129,232,237,0.15);
-    padding-left: 25px;
-}
-
-/* ロゴの余白調整 */
-#menubar .logo {
-    padding: 25px 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.05);
-}
-
-/* メニュー項目のスタイル調整 */
-#menubar nav ul li {
-    margin-bottom: 0;
-}
-
-#menubar nav ul li a {
-    position: relative;
-    display: block;
-    padding: 15px 35px 15px 20px;
-}
-
-/* 矢印アイコンのスタイル */
-#menubar nav ul li a::after {
-    content: '\f105';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
+/* 問題点セクションの数字 */
+.list-grid1 .list .num {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 2.5em;
+    font-weight: bold;
+    opacity: 0.9;
     position: absolute;
     right: 20px;
-    color: #81e8ed;
-    opacity: 0.7;
-    transition: transform 0.3s ease;
+    bottom: 20px;
 }
 
-#menubar nav ul li a:hover::after {
-    transform: translateX(5px);
+/* デジタルシフトセクションの数字 */
+.stat-number {
+    font-size: 3.2em;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    line-height: 1.2;
 }
 
+/* 運用の流れセクションのアイコン */
+.flow .list h4 i {
+    color: #ffffff;
+    margin-right: 10px;
+    font-size: 1.4em;
+    opacity: 0.9;
+}
+
+/* モバイル対応 */
 @media screen and (max-width: 768px) {
-    #menubar_hdr {
-        top: 15px;
-        right: 15px;
+    .list-grid1 .list .num {
+        font-size: 2em;
+    }
+    
+    .stat-number {
+        font-size: 2.8em;
+    }
+    
+    .flow .list h4 i {
+        font-size: 1.2em;
     }
 }
 </style>
