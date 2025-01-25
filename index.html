@@ -66,7 +66,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 <!--▼▼▼▼▼ここから「メイン画像」-->
 <div id="mainimg">
 <div class="hero-content">
-    <div class="hero-left">
+    <div class="hero-text">
         <div class="text">
             <p class="rpg-text">広告運用でお悩みの方へ<br>
             経験豊富な担当者が、貴社に最適な運用プランをご提案いたします</p>
@@ -78,10 +78,9 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
         </div>
     </div>
     
-    <div class="hero-right">
+    <div class="robot-container">
         <div class="robot-image">
             <img src="images/robot.png" alt="広告運用最適化支援 ゼロイチ" class="bounce-animation">
-            <p class="robot-caption">広告運用最適化支援<br>ゼロイチ</p>
         </div>
     </div>
 </div>
@@ -89,45 +88,32 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 <style>
 .hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
+    text-align: center;
 }
 
-.hero-left {
-    flex: 1;
-    padding-right: 40px;
+.hero-text {
+    margin-bottom: 30px;
 }
 
-.hero-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.robot-container {
+    margin-top: 30px;
 }
 
 .robot-image {
     text-align: center;
-    position: relative;
 }
 
 .robot-image img {
-    max-width: 300px;
+    max-width: 200px;
     height: auto;
-}
-
-.robot-caption {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 15px;
-    color: #333;
 }
 
 .bounce-animation {
     animation: bounce 2s infinite;
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes bounce {
@@ -135,23 +121,47 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-8px);
     }
 }
 
 @media screen and (max-width: 768px) {
     .hero-content {
-        flex-direction: column-reverse;
         padding: 20px;
     }
 
-    .hero-left {
-        padding-right: 0;
-        padding-top: 30px;
+    .robot-image img {
+        max-width: 140px;
     }
 
-    .robot-image img {
-        max-width: 200px;
+    .text .rpg-text {
+        font-size: 1.3em;
+        padding: 0 15px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .btn.rpg-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px;
+        margin-bottom: 20px;
+    }
+
+    .btn.rpg-buttons p {
+        width: 100%;
+        margin: 0;
+    }
+
+    .btn.rpg-buttons a {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
     }
 }
 </style>
