@@ -170,9 +170,12 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 
 
-<!--▼▼▼▼▼ここから「お客様の要望」セクション-->
+<!--▼▼▼▼▼ここから「ゼロイチサポート」セクション-->
 <section class="customer-needs">
-    <h2 class="c">お客様の要望に寄り添います<span>Customer Needs</span></h2>
+    <div class="section-header">
+        <h2 class="c">あなたのゼロイチを実現化します<span>Support</span></h2>
+        <img src="images/robot.png" alt="サポートロボット" class="section-robot">
+    </div>
     
     <div class="needs-container">
         <div class="need-item">
@@ -210,6 +213,86 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 </section>
 
 <style>
+/* セクションヘッダーのスタイル修正 */
+.section-header {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;  /* 間隔を広げる */
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 32px;  /* タイトルサイズを大きく */
+    line-height: 1.4;
+}
+
+.section-header h2 span {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.section-robot {
+    width: 150px;  /* PCでの画像サイズを拡大 */
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+    margin-top: -15px;
+}
+
+/* スマホ対応の改善 */
+@media screen and (max-width: 768px) {
+    .section-header {
+        padding: 0 15px;
+        margin-bottom: 25px;
+        gap: 15px;
+        flex-direction: row;  /* 横並びを維持 */
+        align-items: flex-start;  /* 上揃えに変更 */
+    }
+
+    .section-header h2 {
+        font-size: 24px;  /* スマホでの文字サイズ */
+        text-align: left;  /* 左揃えに */
+        line-height: 1.5;
+        margin-top: 10px;  /* 上部に余白追加 */
+    }
+
+    .section-header h2 span {
+        font-size: 14px;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .section-robot {
+        width: 100px;  /* スマホでの画像サイズ */
+        margin-top: 0;
+    }
+
+    /* アニメーションの調整 */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+}
+
+/* 極小画面での調整 */
+@media screen and (max-width: 350px) {
+    .section-header {
+        gap: 10px;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .section-robot {
+        width: 80px;
+    }
+}
+
 /* お客様の要望セクションのスタイル */
 .customer-needs {
     padding: 80px 20px;
@@ -445,7 +528,9 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     </div>
 
     <div class="digital-shift-message">
-        <h3>もう、ネット広告は「選択」ではなく「必須」の時代です</h3>
+        <div class="essential-image-container">
+            <img src="images/ad-essential.png" alt="ネット広告は選択ではなく必須の時代です" class="essential-image">
+        </div>
         <div class="shift-points">
             <div class="point">
                 <i class="fas fa-mobile-alt"></i>
@@ -520,10 +605,17 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     text-align: center;
 }
 
-.digital-shift-message h3 {
-    font-size: 1.8em;
-    margin-bottom: 40px;
-    color: #333;
+.essential-image-container {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.essential-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .shift-points {
@@ -573,8 +665,8 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
         gap: 20px;
     }
 
-    .digital-shift-message h3 {
-        font-size: 1.4em;
+    .essential-image-container {
+        padding: 0 15px;
         margin-bottom: 30px;
     }
 }
