@@ -65,22 +65,96 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 <!--▼▼▼▼▼ここから「メイン画像」-->
 <div id="mainimg">
-<div>
+<div class="hero-content">
+    <div class="hero-left">
+        <div class="text">
+            <p class="rpg-text">広告運用でお悩みの方へ<br>
+            経験豊富な担当者が、貴社に最適な運用プランをご提案いたします</p>
+        </div>
 
-<div class="text">
-<p class="rpg-text">広告運用の技術を<br>
-実践的に活用<br>
-事業を次のステップへ</p>
+        <div class="btn rpg-buttons">
+            <p><a href="contact.html"><i class="fa-regular fa-envelope"></i>無料カウンセリング</a></p>
+            <p><a href="https://lin.ee/OdX0V9B"><i class="fab fa-line"></i>LINE追加</a></p>
+        </div>
+    </div>
+    
+    <div class="hero-right">
+        <div class="robot-image">
+            <img src="images/robot.png" alt="広告運用最適化支援 ゼロイチ" class="bounce-animation">
+            <p class="robot-caption">広告運用最適化支援<br>ゼロイチ</p>
+        </div>
+    </div>
+</div>
 </div>
 
-<div class="btn rpg-buttons">
-<p><a href="contact.html"><i class="fa-regular fa-envelope"></i>無料カウンセリング</a></p>
-<p><a href="https://lin.ee/OdX0V9B"><i class="fab fa-line"></i>LINE追加</a></p>
-</div>
+<style>
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 
-</div>
-</div>
-<!--▲▲▲▲▲ここまで「メイン画像」-->
+.hero-left {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.robot-image {
+    text-align: center;
+    position: relative;
+}
+
+.robot-image img {
+    max-width: 300px;
+    height: auto;
+}
+
+.robot-caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+.bounce-animation {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .hero-left {
+        padding-right: 0;
+        padding-top: 30px;
+    }
+
+    .robot-image img {
+        max-width: 200px;
+    }
+}
+</style>
 
 
 
@@ -354,7 +428,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     transition: all 0.3s ease;
     min-width: 240px;
     background: linear-gradient(135deg, #81e8ed, #65b6ff);
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(129,232,237,0.3);
     position: relative;
     overflow: hidden;
@@ -383,6 +457,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 .cta-button i {
     margin-right: 10px;
     font-size: 1.2em;
+    color: #ffffff;
 }
 
 /* モバイル最適化 */
@@ -837,81 +912,52 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 <section class="price-section" id="plan">
     <h2>料金プラン<span>Plans</span></h2>
     
-    <div class="price-grid">
-        <!-- スタンダードプラン -->
-        <div class="price-item">
-            <div class="price-header">
-                <h3>スタンダードプラン</h3>
-                <div class="price">
-                    <span class="amount">¥100,000</span>
-                    <span class="period">/ 月（税抜）</span>
-                </div>
-            </div>
-            <div class="price-features">
-                <ul>
-                    <li><i class="fas fa-check"></i> 広告運用の基礎講座</li>
-                    <li><i class="fas fa-check"></i> 実践的な運用テクニック</li>
-                    <li><i class="fas fa-check"></i> ターゲティング設定講座</li>
-                    <li><i class="fas fa-check"></i> 広告文作成講座</li>
-                    <li><i class="fas fa-check"></i> 効果測定・分析講座</li>
-                    <li><i class="fas fa-check"></i> 週1回の個別相談</li>
-                </ul>
-            </div>
-            <a href="#contact" class="btn">いますぐ申し込む</a>
+    <div class="plan-categories">
+        <h3>広告運用代行プラン</h3>
+        <div class="price-grid">
+            <!-- 既存の運用代行プラン内容 -->
         </div>
 
-        <!-- プレミアムプラン -->
-        <div class="price-item popular">
-            <div class="popular-badge">人気</div>
-            <div class="price-header">
-                <h3>プレミアムプラン</h3>
-                <div class="price">
-                    <span class="amount">¥150,000</span>
-                    <span class="period">/ 月（税抜）</span>
+        <h3>社内育成プラン</h3>
+        <div class="price-grid">
+            <div class="price-item">
+                <div class="price-header">
+                    <h3>ベーシックコース</h3>
+                    <div class="price">
+                        <span class="amount">¥300,000</span>
+                        <span class="period">/ 3ヶ月（税抜）</span>
+                    </div>
+                </div>
+                <div class="price-features">
+                    <ul>
+                        <li>広告運用の基礎講座</li>
+                        <li>実践的な運用テクニック</li>
+                        <li>週1回のオンライン指導</li>
+                        <li>教材・資料提供</li>
+                    </ul>
                 </div>
             </div>
-            <div class="price-features">
-                <ul>
-                    <li><i class="fas fa-check"></i> スタンダードプランの全機能</li>
-                    <li><i class="fas fa-check"></i> アカウント構造設計支援</li>
-                    <li><i class="fas fa-check"></i> 競合分析サポート</li>
-                    <li><i class="fas fa-check"></i> 緊急時のサポート</li>
-                    <li><i class="fas fa-check"></i> 週2回の個別相談</li>
-                </ul>
-            </div>
-            <a href="#contact" class="btn">今すぐ無料相談する</a>
-        </div>
 
-        <!-- 運用代行プラン -->
-        <div class="price-item">
-            <div class="price-header">
-                <h3>運用代行プラン</h3>
-                <div class="price">
-                    <span class="amount">広告運用費の20%</span>
-                    <div class="minimum-price">※最低料金 ¥50,000/月（税抜）</div>
+            <div class="price-item popular">
+                <div class="popular-badge">人気</div>
+                <div class="price-header">
+                    <h3>マスターコース</h3>
+                    <div class="price">
+                        <span class="amount">¥500,000</span>
+                        <span class="period">/ 3ヶ月（税抜）</span>
+                    </div>
+                </div>
+                <div class="price-features">
+                    <ul>
+                        <li>ベーシックコースの全内容</li>
+                        <li>実践的な運用演習</li>
+                        <li>週2回のマンツーマン指導</li>
+                        <li>資格取得サポート</li>
+                        <li>3ヶ月間の運用サポート</li>
+                    </ul>
                 </div>
             </div>
-            <div class="price-features">
-                <ul>
-                    <li><i class="fas fa-check"></i> アカウント構造の最適化</li>
-                    <li><i class="fas fa-check"></i> ターゲティングの設定・調整</li>
-                    <li><i class="fas fa-check"></i> 入札額の最適化</li>
-                    <li><i class="fas fa-check"></i> 広告文・クリエイティブの制作</li>
-                    <li><i class="fas fa-check"></i> 日次での運用管理</li>
-                    <li><i class="fas fa-check"></i> 週次での状況報告</li>
-                    <li><i class="fas fa-check"></i> 月次での運用報告</li>
-                </ul>
-            </div>
-            <a href="#contact" class="btn">詳細を問い合わせる</a>
         </div>
-    </div>
-
-    <div class="price-notes">
-        <ul>
-            <li><i class="fas fa-exclamation-circle"></i> 料金は予告なく変更される場合があります。</li>
-            <li><i class="fas fa-exclamation-circle"></i> お支払いは事前一括払いとなります。</li>
-            <li><i class="fas fa-exclamation-circle"></i> 広告運用代行プランは広告費用は別途必要となります。</li>
-        </ul>
     </div>
 </section>
 <!--▲▲▲▲▲ここまで「料金プラン」-->
@@ -1032,6 +1078,130 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 </section>
 <!--▲▲▲▲▲ここまで「サムネイルスライドショー」-->
+
+
+
+<!--▼▼▼▼▼ここから「サービスの特徴」セクション-->
+<section class="bg1 bg-pattern1">
+    <h2 class="c">お客様に合わせた2つのプラン<span>Service Plans</span></h2>
+    
+    <div class="service-types">
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3>広告運用代行</h3>
+            <p class="target">対象：広告運用を全面的に任せたい経営者様</p>
+            <ul class="feature-list">
+                <li>面倒な設定や日々の運用を完全代行</li>
+                <li>専門用語を使わない分かりやすい報告</li>
+                <li>経営判断に必要な情報を定期的に提供</li>
+                <li>土日祝日の対応も可能</li>
+            </ul>
+            <div class="persona-tag">
+                <span>65歳以上の経営者様に人気</span>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>社内人材育成プログラム</h3>
+            <p class="target">対象：自社で広告運用を行いたい企業様</p>
+            <ul class="feature-list">
+                <li>現場で使える実践的なノウハウ提供</li>
+                <li>段階的な学習カリキュラム</li>
+                <li>運用開始後のサポート体制</li>
+                <li>オンライン・休日講座にも対応</li>
+            </ul>
+            <div class="persona-tag">
+                <span>25-34歳の若手管理職に人気</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.service-types {
+    display: flex;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.service-card {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.service-icon {
+    font-size: 2.5em;
+    color: #81e8ed;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.target {
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.feature-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #81e8ed;
+}
+
+.persona-tag {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: #81e8ed;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    .service-types {
+        flex-direction: column;
+    }
+    
+    .service-card {
+        margin-bottom: 40px;
+    }
+}
+</style>
+<!--▲▲▲▲▲ここまで「サービスの特徴」セクション-->
 
 
 
