@@ -66,6 +66,12 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 <!--▼▼▼▼▼ここから「メイン画像」-->
 <div id="mainimg">
 <div class="hero-content">
+    <div class="trust-badges">
+        <span>累計運用実績 5億円以上</span>
+        <span>顧客満足度 98%</span>
+        <span>運用成功率 95%</span>
+    </div>
+    
     <div class="hero-text">
         <div class="text">
             <p class="rpg-text">広告運用で事業の成長を加速させる<br>
@@ -386,6 +392,15 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* PC表示時の最適化 */
+@media screen and (min-width: 769px) {
+    .image-container {
+        max-width: 800px;  /* PCでの最大幅を制限 */
+        padding: 0;
+    }
+}
+
+/* スマホ表示はそのまま */
 @media screen and (max-width: 768px) {
     .ad-operation-image {
         padding: 20px 0;
@@ -823,27 +838,93 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 @media screen and (max-width: 768px) {
     .service-types {
-        flex-direction: column;
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding: 20px 15px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
     }
     
     .service-card {
+        flex: 0 0 280px; /* カードの固定幅 */
+        scroll-snap-align: start;
+        margin: 0;
         padding: 25px 20px;
-        margin: 0 15px 30px;
+        min-height: 450px; /* 高さを統一 */
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .service-card h3 {
-        font-size: 1.3em;
+    /* スクロールバーのカスタマイズ */
+    .service-types::-webkit-scrollbar {
+        height: 4px;
     }
 
-    .price-display {
-        padding: 15px;
+    .service-types::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 2px;
     }
 
-    .price-display .amount {
-        font-size: 1.3em;
+    .service-types::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 2px;
+    }
+
+    /* スクロールインジケーター */
+    .scroll-indicator {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .scroll-dot {
+        width: 8px;
+        height: 8px;
+        background: #ddd;
+        border-radius: 50%;
+        transition: background 0.3s;
+    }
+
+    .scroll-dot.active {
+        background: #2B5A8F;
     }
 }
 </style>
+
+<!-- スクロールインジケーター用のスクリプト -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceTypes = document.querySelector('.service-types');
+    if (!serviceTypes) return;
+
+    const cards = serviceTypes.querySelectorAll('.service-card');
+    const scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'scroll-indicator';
+
+    // スクロールドットの作成
+    cards.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'scroll-dot' + (index === 0 ? ' active' : '');
+        scrollIndicator.appendChild(dot);
+    });
+
+    serviceTypes.parentNode.insertBefore(scrollIndicator, serviceTypes.nextSibling);
+
+    // スクロール時のドット更新
+    serviceTypes.addEventListener('scroll', () => {
+        const scrollPosition = serviceTypes.scrollLeft;
+        const cardWidth = cards[0].offsetWidth + 15; // gap含む
+        const activeIndex = Math.round(scrollPosition / cardWidth);
+
+        document.querySelectorAll('.scroll-dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeIndex);
+        });
+    });
+});
+</script>
 
 <!-- 料金プラン後のCTA -->
 <section class="cta-section">
