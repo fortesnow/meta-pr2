@@ -1177,95 +1177,60 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 @media screen and (max-width: 768px) {
     .cta-section {
-        padding: 30px 15px;
+        padding: 40px 15px;
+    }
+
+    .cta-container {
+        width: 100%;
+        padding: 0 20px;
     }
 
     .cta-title {
         font-size: 20px;
         margin-bottom: 25px;
+        padding: 0 10px;
     }
 
     .cta-buttons {
         flex-direction: column;
-        gap: 12px;
+        gap: 15px;
+        padding: 0;
+        width: 100%;
     }
 
     .cta-button {
         width: 100%;
-        padding: 15px;
+        max-width: none;
+        padding: 16px 24px;
         font-size: 16px;
+        margin: 0 auto;
+        justify-content: center;
+        border-radius: 8px;
+    }
+
+    .cta-button i {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+
+    .cta-button.contact {
+        background: #2B5A8F;
+        box-shadow: 0 4px 8px rgba(43, 90, 143, 0.2);
+    }
+
+    .cta-button.line {
+        border: 2px solid #333;
     }
 }
 
-/* スマートフォン最適化のためのスタイル追加 */
-@media screen and (max-width: 768px) {
-    .hero-content {
-        padding: 40px 15px;
-    }
-
-    .hero-text .text {
-        padding: 0 10px;
-    }
-
-    .rpg-text {
-        font-size: 1.4em;
-        line-height: 1.6;
-        margin-bottom: 25px;
-    }
-
-    .btn.rpg-buttons {
-        flex-direction: column;
-        gap: 15px;
-        padding: 0 20px;
-    }
-
-    .btn.rpg-buttons a {
-        width: 100%;
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    .robot-image img {
-        max-width: 150px;
-    }
-}
-
-/* お客様の要望セクションのモバイル最適化 */
-@media screen and (max-width: 768px) {
-    .needs-container {
-        gap: 15px;
-        padding: 0 10px;
-    }
-
-    .need-circle {
-        width: 200px;
-        height: 200px;
-        padding: 15px;
-    }
-
-    .need-circle p {
-        font-size: 13px;
-        line-height: 1.4;
-    }
-
-    .need-circle .highlight {
-        font-size: 15px;
-    }
-}
-
-/* タッチ操作の最適化 */
+/* タッチ操作の改善 */
 @media (hover: none) {
-    /* タッチデバイス用のボタンサイズ拡大 */
-    .cta-button,
-    .btn.rpg-buttons a,
-    .submit-btn {
-        min-height: 48px; /* タップターゲットの最小サイズ */
+    .cta-button {
+        min-height: 52px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    /* タッチフィードバック */
-    .cta-button:active,
-    .btn.rpg-buttons a:active,
-    .submit-btn:active {
+    .cta-button:active {
         transform: scale(0.98);
         opacity: 0.9;
     }
