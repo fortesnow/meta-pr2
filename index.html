@@ -278,11 +278,124 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
         font-size: 15px;
     }
 }
+
+/* お客様の要望セクションのスマホ最適化 */
+@media screen and (max-width: 768px) {
+    .customer-needs {
+        padding: 40px 15px;
+    }
+
+    .needs-container {
+        gap: 12px;
+        padding: 0 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 450px;
+        margin: 25px auto 0;
+    }
+
+    .need-item {
+        min-width: auto;
+        max-width: none;
+        width: 100%;
+    }
+
+    .need-circle {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        padding: 12px;
+        border-radius: 15px;
+        background: #f8f8f8;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .need-circle p {
+        font-size: 12px;
+        line-height: 1.4;
+        margin: 3px 0;
+    }
+
+    .need-circle .highlight {
+        font-size: 14px;
+        margin: 5px 0;
+        color: #2B5A8F;
+    }
+
+    /* タイトルの調整 */
+    .customer-needs h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .customer-needs h2 span {
+        font-size: 14px;
+    }
+}
+
+/* さらに小さい画面サイズの対応 */
+@media screen and (max-width: 350px) {
+    .needs-container {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+    }
+
+    .need-circle {
+        padding: 15px;
+    }
+
+    .need-circle p {
+        font-size: 13px;
+    }
+
+    .need-circle .highlight {
+        font-size: 15px;
+    }
+}
 </style>
 
 
 
 <main>
+
+
+
+<!--▼▼▼▼▼ここから「広告運用イメージ」セクション-->
+<section class="ad-operation-image">
+    <div class="image-container">
+        <img src="images/ad-operation.png" alt="ビジネス戦略を加速する広告運用" class="full-width-image">
+    </div>
+</section>
+
+<style>
+.ad-operation-image {
+    padding: 40px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.image-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .ad-operation-image {
+        padding: 20px 0;
+    }
+
+    .image-container {
+        padding: 0 15px;
+    }
+}
+</style>
 
 
 
