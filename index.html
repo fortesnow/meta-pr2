@@ -69,7 +69,11 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 </div>
 
 <style>
-/* mainimg.jpgを非表示にする */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 #mainimg {
     width: 100%;
     margin: 0;
@@ -89,12 +93,13 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     vertical-align: top;
 }
 
+/* スマホ表示の調整 */
 @media screen and (max-width: 768px) {
     #mainimg {
         margin-top: 60px;
-        background: none !important; /* スマホ表示時も背景画像を無効化 */
     }
     
+    /* 暗いオーバーレイを削除 */
     #mainimg::after {
         display: none;
     }
