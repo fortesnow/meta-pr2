@@ -73,15 +73,18 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     width: 100%;
     margin: 0;
     padding: 0;
-    text-align: center;
+    line-height: 0; /* 画像下の余白を削除 */
+    font-size: 0; /* 画像間の余白を削除 */
     background: #FFF5F5;
 }
 
 .main-visual {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    vertical-align: top; /* 画像下部の余白を削除 */
 }
 
 /* スマホ表示の調整 */
