@@ -33,6 +33,9 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "px7tc0omzp");
 </script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -69,19 +72,16 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 </div>
 
 <style>
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
+/* style.cssの#mainimgの設定を上書き */
 #mainimg {
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 !important; /* 元のpadding-topを上書き */
     line-height: 0;
     font-size: 0;
     position: relative;
-    background-image: none !important; /* 背景画像を無効化 */
+    display: block;
+    background: none !important; /* 背景画像を無効化 */
 }
 
 .main-visual {
@@ -93,23 +93,47 @@ body, html {
     vertical-align: top;
 }
 
+/* PC表示の調整を追加 */
+@media screen and (min-width: 769px) {
+    #mainimg {
+        margin-top: 0;
+        padding-top: 0 !important;
+        background: none !important;
+    }
+}
+
 /* スマホ表示の調整 */
 @media screen and (max-width: 768px) {
     #mainimg {
         margin-top: 60px;
     }
     
-    /* 暗いオーバーレイを削除 */
     #mainimg::after {
         display: none;
     }
 }
 </style>
-
-
+<!--▲▲▲▲▲ここまで「メイン画像」セクション-->
 
 <main>
-
+<!-- メイン画像直後のCTA -->
+<section class="cta-section">
+    <div class="cta-container">
+        <h2 class="cta-title">
+            <span class="slash-decoration">まずは無料カウンセリングから</span>
+        </h2>
+        <div class="cta-buttons">
+            <a href="contact.html" class="cta-button contact">
+                <i class="fa-regular fa-paper-plane"></i>&nbsp;&nbsp;
+                お問い合わせ予約
+            </a>
+            <a href="https://lin.ee/OdX0V9B" target="_blank" class="cta-button line">
+                <i class="fab fa-line"></i>&nbsp;&nbsp;
+                LINEで相談
+            </a>
+</div>
+    </div>
+</section>
 
 
 <!--▼▼▼▼▼ここから「ゼロイチサポート」セクション-->
@@ -117,16 +141,16 @@ body, html {
     <div class="section-header">
         <h2 class="c">あなたのゼロイチを実現化します<span>Support</span></h2>
         <img src="images/robot.png" alt="サポートロボット" class="section-robot">
-    </div>
-    
+</div>
+
     <div class="needs-container">
         <div class="need-item">
             <div class="need-circle">
                 <p>広告運用の経験がなく、</p>
                 <p class="highlight">専門家に任せたい</p>
                 <p>経営者様向け</p>
-            </div>
-        </div>
+</div>
+</div>
         
         <div class="need-item">
             <div class="need-circle">
@@ -393,7 +417,7 @@ body, html {
 <section class="ad-operation-image">
     <div class="image-container">
         <img src="images/ad-operation.png" alt="ビジネス戦略を加速する広告運用" class="full-width-image">
-    </div>
+</div>
 </section>
 <!--▲▲▲▲▲ここまで「広告運用イメージ」セクション-->
 
@@ -449,7 +473,7 @@ body, html {
                 <h4><span class="marker">スマートフォン保有率</span></h4>
                 <p>若年層の9割以上がスマートフォンを日常的に使用。テレビCMよりもSNS広告の方が効果的になっています。</p>
             </div>
-        </div>
+</div>
 
         <div class="list bg-white up">
             <div class="stat-box">
@@ -457,21 +481,21 @@ body, html {
                 <h4><span class="marker">1日のネット利用時間</span></h4>
                 <p>20-30代の平均ネット利用時間。テレビ視聴時間の2倍以上で、広告接触機会が飛躍的に増加。</p>
             </div>
-        </div>
+</div>
 
         <div class="list bg-white up">
             <div class="stat-box">
                 <span class="stat-number">2.8兆円</span>
                 <h4><span class="marker">インターネット広告費</span></h4>
                 <p>テレビ広告を上回り、最大の広告媒体に。効果測定が容易で、費用対効果の高い広告運用が可能です。</p>
-            </div>
+</div>
         </div>
     </div>
 
     <div class="digital-shift-message">
         <div class="essential-image-container">
             <img src="images/ad-essential.png" alt="ネット広告は選択ではなく必須の時代です" class="essential-image">
-        </div>
+            </div>
         <div class="shift-points">
             <div class="point">
                 <i class="fas fa-mobile-alt"></i>
@@ -480,11 +504,11 @@ body, html {
             <div class="point">
                 <i class="fas fa-chart-line"></i>
                 <p>従来の広告とは違い、効果測定が明確<br>投資対効果を最大化できます</p>
-            </div>
+        </div>
             <div class="point">
                 <i class="fas fa-bullseye"></i>
                 <p>興味関心や行動履歴に基づく精密なターゲティングで<br>無駄のない広告配信が可能</p>
-            </div>
+    </div>
         </div>
     </div>
 </section>
@@ -640,20 +664,20 @@ body, html {
         <div class="goals-content">
             <div class="goal-item">
                 <i class="fas fa-chart-line"></i>
-                <h3>売上の安定的な成長</h3>
-                <p>広告運用の最適化により、新規顧客の獲得コストを抑えながら、継続的な売上の成長を実現できます。効果測定と改善を繰り返すことで、投資対効果の高いマーケティングが可能になります。</p>
-            </div>
+        <h3>売上の安定的な成長</h3>
+        <p>広告運用の最適化により、新規顧客の獲得コストを抑えながら、継続的な売上の成長を実現できます。効果測定と改善を繰り返すことで、投資対効果の高いマーケティングが可能になります。</p>
+    </div>
             <div class="goal-item">
-                <i class="fas fa-bullseye"></i>
-                <h3>理想の顧客層にリーチ</h3>
-                <p>年齢、興味関心、行動パターンなど、細かなターゲティング設定により、商品やサービスに最適な顧客層だけに効率的にアプローチできます。広告費用の無駄を削減し、成約率の向上につながります。</p>
-            </div>
+            <i class="fas fa-bullseye"></i>
+        <h3>理想の顧客層にリーチ</h3>
+        <p>年齢、興味関心、行動パターンなど、細かなターゲティング設定により、商品やサービスに最適な顧客層だけに効率的にアプローチできます。広告費用の無駄を削減し、成約率の向上につながります。</p>
+    </div>
             <div class="goal-item">
                 <i class="fas fa-coins"></i>
-                <h3>データに基づく意思決定</h3>
-                <p>広告運用で得られるデータを分析することで、顧客の行動や傾向を把握し、商品開発やサービス改善に活かせます。感覚や経験だけでなく、確かな根拠に基づいたビジネス判断が可能になります。</p>
-            </div>
-        </div>
+        <h3>データに基づく意思決定</h3>
+        <p>広告運用で得られるデータを分析することで、顧客の行動や傾向を把握し、商品開発やサービス改善に活かせます。感覚や経験だけでなく、確かな根拠に基づいたビジネス判断が可能になります。</p>
+    </div>
+</div>
     </div>
 </section>
 
@@ -1050,11 +1074,11 @@ document.addEventListener('DOMContentLoaded', function() {
         </h2>
         <div class="cta-buttons">
             <a href="contact.html" class="cta-button contact">
-                <i class="fa-regular fa-paper-plane"></i>
-                無料カウンセリング予約
+                <i class="fa-regular fa-paper-plane"></i>&nbsp;&nbsp;
+                お問い合わせ予約
             </a>
             <a href="https://lin.ee/OdX0V9B" target="_blank" class="cta-button line">
-                <i class="fab fa-line"></i>
+                <i class="fab fa-line"></i>&nbsp;&nbsp;
                 LINEで相談
             </a>
         </div>
@@ -1128,19 +1152,19 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="list bg-black up">
 <h4 class="kazari">Threadsでの情報発信<span class="color-check">総合15,000+ フォロワー</span></h4>
 <p>広告運用の最新トレンドや実践的なTipsを日々発信。Meta広告の新機能やアップデート情報もいち早くお届けしています。</p>
-</div>
+                </div>
 
 <div class="list bg-black up">
 <h4 class="kazari">業界セミナーでの<span class="color-check">登壇実績多数</span></h4>
 <p>デジタルマーケティングカンファレンスや社内内製化の多数実績あり。実践的な広告運用ノウハウを提供しています。</p>
-</div>
+            </div>
 
 <div class="list bg-black up">
 <h4 class="kazari">各種広告媒体での<span class="color-check">実践的な運用経験</span></h4>
 <p>Meta広告、Google広告、TikTok広告など、主要プラットフォームでの実績多数。最新のトレンドと実践的なノウハウを活かした運用支援を提供します。</p>
-</div>
+        </div>
 
-</div>
+                </div>
 <!--/.list-grid1-->
 
 <div class="social-proof">
@@ -1148,7 +1172,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="media-grid">
             <div class="media-item">
                 <img src="images/threads-post1.jpg" alt="Threads投稿1" class="media-image">
-            </div>
+                </div>
             <div class="media-item">
                 <img src="images/threads-post2.jpg" alt="Threads投稿2" class="media-image">
             </div>
@@ -1160,7 +1184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a href="https://www.threads.net/@stellariumix" target="_blank" class="threads-button">
         <i class="fab fa-threads"></i>Threadsでもっと見る
     </a>
-</div>
+    </div>
 
 </section>
 <!--▲▲▲▲▲ここまで「メディア掲載＆情報発信」-->
@@ -1219,15 +1243,15 @@ document.addEventListener('DOMContentLoaded', function() {
         </h2>
         <div class="cta-buttons">
             <a href="contact.html" class="cta-button contact">
-                <i class="fa-regular fa-paper-plane"></i>
-                無料カウンセリング予約
+                <i class="fa-regular fa-paper-plane"></i>&nbsp;&nbsp;
+                お問い合わせ予約
             </a>
             <a href="https://lin.ee/OdX0V9B" target="_blank" class="cta-button line">
-                <i class="fab fa-line"></i>
+                <i class="fab fa-line"></i>&nbsp;&nbsp;
                 LINEで相談
             </a>
-        </div>
-    </div>
+</div>
+</div>
 </section>
 
 
