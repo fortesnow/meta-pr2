@@ -43,7 +43,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 
 
-<!--▼▼▼▼▼ここから「ヘッダー」-->
+<!--▼▼▼▼▼ここから「ヘッダー」セクション-->
 <header>
 
 <h1 id="logo"><a href="index.html"><img src="images/stellarium-logo.png" alt="Stellarium"></a></h1>
@@ -59,11 +59,11 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 </nav>
 
 </header>
-<!--▲▲▲▲▲ここまで「ヘッダー」-->
+<!--▲▲▲▲▲ここまで「ヘッダー」セクション-->
 
 
 
-<!--▼▼▼▼▼ここから「メイン画像」-->
+<!--▼▼▼▼▼ここから「メイン画像」セクション-->
 <div id="mainimg">
 <div class="hero-content">
     <div class="trust-badges">
@@ -445,7 +445,206 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 
 
-<main>
+
+
+<!--▼▼▼▼▼ここから「広告運用イメージ」セクション-->
+<section class="ad-operation-image">
+    <div class="image-container">
+        <img src="images/ad-operation.png" alt="ビジネス戦略を加速する広告運用" class="full-width-image">
+    </div>
+</section>
+<!--▲▲▲▲▲ここまで「広告運用イメージ」セクション-->
+
+
+
+<!--▼▼▼▼▼ここから「デジタルシフト」セクション-->
+<section class="bg3 bg-pattern3" id="digital-shift">
+    <h2 class="c">今、ビジネスに必要不可欠なデジタル戦略<span>Digital Shift</span></h2>
+
+    <div class="list-grid1">
+        <div class="list bg-white up">
+            <div class="stat-box">
+                <span class="stat-number">96.3%</span>
+                <h4><span class="marker">スマートフォン保有率</span></h4>
+                <p>若年層の9割以上がスマートフォンを日常的に使用。テレビCMよりもSNS広告の方が効果的になっています。</p>
+            </div>
+        </div>
+
+        <div class="list bg-white up">
+            <div class="stat-box">
+                <span class="stat-number">4.5時間</span>
+                <h4><span class="marker">1日のネット利用時間</span></h4>
+                <p>20-30代の平均ネット利用時間。テレビ視聴時間の2倍以上で、広告接触機会が飛躍的に増加。</p>
+            </div>
+        </div>
+
+        <div class="list bg-white up">
+            <div class="stat-box">
+                <span class="stat-number">2.8兆円</span>
+                <h4><span class="marker">インターネット広告費</span></h4>
+                <p>テレビ広告を上回り、最大の広告媒体に。効果測定が容易で、費用対効果の高い広告運用が可能です。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="digital-shift-message">
+        <div class="essential-image-container">
+            <img src="images/ad-essential.png" alt="ネット広告は選択ではなく必須の時代です" class="essential-image">
+        </div>
+        <div class="shift-points">
+            <div class="point">
+                <i class="fas fa-mobile-alt"></i>
+                <p>テレビ離れが加速する中、若年層へのリーチには<br>SNSやネット広告が不可欠に</p>
+            </div>
+            <div class="point">
+                <i class="fas fa-chart-line"></i>
+                <p>従来の広告とは違い、効果測定が明確<br>投資対効果を最大化できます</p>
+            </div>
+            <div class="point">
+                <i class="fas fa-bullseye"></i>
+                <p>興味関心や行動履歴に基づく精密なターゲティングで<br>無駄のない広告配信が可能</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--▲▲▲▲▲ここまで「デジタルシフト」セクション-->
+
+<style>
+/* デジタルシフトセクションのスタイル */
+#digital-shift {
+    padding: 80px 20px;
+}
+
+.list-grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.list.bg-white {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 40px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-number {
+    font-size: 3.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.stat-box h4 {
+    margin: 15px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.stat-box p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #666;
+}
+
+.digital-shift-message {
+    max-width: 1000px;
+    margin: 60px auto 0;
+    text-align: center;
+}
+
+.digital-shift-message h3 {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.shift-points {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.point {
+    text-align: center;
+}
+
+.point i {
+    font-size: 2em;
+    color: #2B5A8F;
+    margin-bottom: 15px;
+}
+
+.point p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #666;
+}
+
+@media screen and (max-width: 768px) {
+    #digital-shift {
+        padding: 40px 15px;
+    }
+
+    .list-grid1 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .stat-box {
+        padding: 30px 20px;
+    }
+
+    .stat-number {
+        font-size: 2.8em;
+    }
+
+    .shift-points {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .digital-shift-message h3 {
+        font-size: 1.4em;
+        margin-bottom: 30px;
+    }
+}
+
+.essential-image-container {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.essential-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .essential-image-container {
+        padding: 0 15px;
+        margin-bottom: 30px;
+    }
+}
+</style>
 
 
 
@@ -657,7 +856,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 </section>
 <!--▲▲▲▲▲ここまで「お客様の声」-->
 
-<!--▼▼▼▼▼ここから「料金プラン」セクション + CTA -->
+<!--▼▼▼▼▼ここから「料金プラン」セクション-->
 <section class="bg1 bg-pattern1">
     <h2 class="c">お客様に合わせた2つのプラン<span>Service Plans</span></h2>
     
@@ -987,7 +1186,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<!--▼▼▼▼▼ここから「FAQ」セクション + CTA -->
+<!--▼▼▼▼▼ここから「FAQ」セクション-->
 <section class="bg-primary-color" id="faq">
 
 <div class="c2">
@@ -1051,11 +1250,13 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 
+
+
 </main>
 
 
 
-<!--▼▼▼▼▼ここから「フッター」-->
+<!--▼▼▼▼▼ここから「フッター」セクション-->
 <footer>
 
 <div>
@@ -1080,7 +1281,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 </footer>
-<!--▲▲▲▲▲ここまで「フッター」-->
+<!--▲▲▲▲▲ここまで「フッター」セクション-->
 
 
 
