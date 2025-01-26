@@ -69,6 +69,11 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 </div>
 
 <style>
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 #mainimg {
     width: 100%;
     margin: 0;
@@ -76,6 +81,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     line-height: 0;
     font-size: 0;
     position: relative;
+    display: block;
 }
 
 .main-visual {
@@ -84,6 +90,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     display: block;
     margin: 0;
     padding: 0;
+    vertical-align: top;
 }
 
 /* スマホ表示の調整 */
@@ -94,7 +101,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     
     /* 暗いオーバーレイを削除 */
     #mainimg::after {
-        display: none; /* または完全に削除 */
+        display: none;
     }
 }
 </style>
