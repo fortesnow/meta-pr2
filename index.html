@@ -65,101 +65,34 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 <!--▼▼▼▼▼ここから「メイン画像」セクション-->
 <div id="mainimg">
-<div class="hero-content">
-    <div class="trust-badges">
-        <span>累計運用実績 5億円以上</span>
-        <span>顧客満足度 98%</span>
-        <span>運用成功率 95%</span>
-    </div>
-    
-    <div class="hero-text">
-        <div class="text">
-            <p class="rpg-text">広告運用で事業の成長を加速させる<br>
-            プロの運用力で、あなたのビジネスを次のステージへ</p>
-        </div>
-
-        <div class="btn rpg-buttons">
-            <p><a href="contact.html"><i class="fa-regular fa-envelope"></i>無料カウンセリング</a></p>
-            <p><a href="https://lin.ee/OdX0V9B"><i class="fab fa-line"></i>LINE追加</a></p>
-        </div>
-    </div>
-    
-    <div class="robot-container">
-        <div class="robot-image">
-            <img src="images/robot.png" alt="広告運用最適化支援 ゼロイチ" class="bounce-animation">
-        </div>
-    </div>
-</div>
+    <img src="images/main-pic.png" alt="StellarRium" class="main-visual">
 </div>
 
 <style>
-.hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+#mainimg {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
+    background: #FFF5F5;
 }
 
-.hero-text {
-    margin-bottom: 30px;
-}
-
-.robot-container {
-    margin-top: 30px;
-}
-
-.robot-image {
-    text-align: center;
-}
-
-.robot-image img {
-    max-width: 200px;
+.main-visual {
+    max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-.bounce-animation {
-    animation: bounce 2s infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
+/* スマホ表示の調整 */
 @media screen and (max-width: 768px) {
-    .hero-content {
-        padding: 40px 15px;
+    #mainimg {
+        margin-top: 60px;
     }
 
-    .hero-text .text {
-        padding: 0 10px;
-    }
-
-    .rpg-text {
-        font-size: 1.4em;
-        line-height: 1.6;
-        margin-bottom: 25px;
-    }
-
-    .btn.rpg-buttons {
-        flex-direction: column;
-        gap: 15px;
-        padding: 0 20px;
-    }
-
-    .btn.rpg-buttons a {
+    .main-visual {
         width: 100%;
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    .robot-image img {
-        max-width: 150px;
+        height: auto;
     }
 }
 </style>
