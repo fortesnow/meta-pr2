@@ -64,8 +64,8 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 
 
 <!--▼▼▼▼▼ここから「メイン画像」セクション-->
-<div id="mainimg" style="position: relative; z-index: 1;">
-    <img src="images/main-pic.png" alt="StellarRium" class="main-visual" style="filter: none; opacity: 1;">
+<div id="mainimg">
+    <img src="images/main-pic.png" alt="StellarRium" class="main-visual">
 </div>
 
 <style>
@@ -75,7 +75,6 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     padding: 0;
     line-height: 0;
     font-size: 0;
-    background: transparent;
 }
 
 .main-visual {
@@ -84,14 +83,20 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     display: block;
     margin: 0;
     padding: 0;
-    vertical-align: top;
-    mix-blend-mode: normal;
 }
 
 /* スマホ表示の調整 */
 @media screen and (max-width: 768px) {
     #mainimg {
-        margin-top: 60px;
+        margin-top: 60px; /* ヘッダーの高さ分 */
+        position: relative;
+        z-index: 1; /* ヘッダーより前面に */
+    }
+
+    .main-visual {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 }
 </style>
