@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>確かな実績で支える、あなたのビジネスの広告運用｜プロフェッショナルチームが全面サポート</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content="Stellariumはメタ広告の効果的なPRを実現するためのサービスです。">
 <link rel="stylesheet" href="css/style.css">
 
@@ -97,6 +97,16 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 @media screen and (min-width: 769px) {
     #mainimg {
         margin-top: 90px;
+        max-width: 1400px; /* 最大幅を1400pxに拡大 */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .main-visual {
+        width: 100%;
+        height: auto;
+        max-height: 90vh; /* 画面の高さの90%まで許容 */
+        object-fit: contain;
     }
 }
 
@@ -104,12 +114,30 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 @media screen and (max-width: 768px) {
     #mainimg {
         margin-top: 60px;
+        margin-bottom: 0; /* 下部の余白を削除 */
     }
     
-    /* 暗いオーバーレイを完全に削除 */
-    #mainimg::after {
-        display: none !important;
-        background: none !important;
+    .main-visual {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+/* CTAセクションの調整 */
+.cta-section {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+    margin: 0 auto;
+    position: relative; /* 位置関係を明確に */
+    z-index: 2; /* 必要に応じて重なり順を調整 */
+}
+
+@media screen and (max-width: 768px) {
+    .cta-section {
+        padding: 40px 15px;
+        margin-top: 0; /* メイン画像との間隔を調整 */
     }
 }
 </style>
