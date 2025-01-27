@@ -3313,4 +3313,81 @@ h2 img {
     }
 }
 
+/* お客様の声セクションのレスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .voice-container {
+        display: block;
+        padding: 0 15px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px; /* スクロールバー用の余白 */
+    }
+
+    .voice-item {
+        display: inline-block;
+        width: 85vw; /* ビューポートの85%の幅 */
+        white-space: normal;
+        vertical-align: top;
+        margin-right: 15px;
+        scroll-snap-align: start;
+    }
+
+    /* スクロールバーのカスタマイズ */
+    .voice-container::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .voice-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .voice-container::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 2px;
+    }
+
+    /* スクロールインジケーター */
+    .scroll-indicator {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .scroll-dot {
+        width: 8px;
+        height: 8px;
+        background: #ddd;
+        border-radius: 50%;
+        transition: background 0.3s;
+    }
+
+    .scroll-dot.active {
+        background: #2B5A8F;
+    }
+
+    .voice-header {
+        margin-bottom: 15px;
+    }
+
+    .voice-header .icon {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+    }
+
+    .voice-content {
+        margin-bottom: 15px;
+    }
+}
+
+/* 極小画面での調整 */
+@media screen and (max-width: 480px) {
+    .voice-item {
+        width: 90vw; /* より小さい画面では幅を90%に */
+    }
+}
+
 

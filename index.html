@@ -1264,6 +1264,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+<!--▲▲▲▲▲ここまで「料金プラン」-->
+
 
 <!-- 料金プラン後のCTA -->
 <section class="cta-section">
@@ -1804,6 +1806,38 @@ html {
     }
 }
 </style>
+
+<!-- お客様の声セクションの後に追加 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const voiceContainer = document.querySelector('.voice-container');
+    if (!voiceContainer) return;
+
+    const voiceItems = voiceContainer.querySelectorAll('.voice-item');
+    const scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'scroll-indicator';
+
+    // スクロールドットの作成
+    voiceItems.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'scroll-dot' + (index === 0 ? ' active' : '');
+        scrollIndicator.appendChild(dot);
+    });
+
+    voiceContainer.parentNode.insertBefore(scrollIndicator, voiceContainer.nextSibling);
+
+    // スクロール時のドット更新
+    voiceContainer.addEventListener('scroll', () => {
+        const scrollPosition = voiceContainer.scrollLeft;
+        const itemWidth = voiceItems[0].offsetWidth + 15; // margin-right含む
+        const activeIndex = Math.round(scrollPosition / itemWidth);
+
+        document.querySelectorAll('.scroll-dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeIndex);
+        });
+    });
+});
+</script>
 
 </body>
 </html>
