@@ -3306,4 +3306,11 @@ h2 img {
 +   }
 }
 
+@media (max-width: 768px) {
+    #mainimg::after {
+        background: none !important;
+        opacity: 0 !important;
+    }
+}
+
 
