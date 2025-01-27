@@ -72,16 +72,15 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 </div>
 
 <style>
-/* style.cssの#mainimgの設定を上書き */
 #mainimg {
     width: 100%;
     margin: 0;
-    padding: 0 !important; /* 元のpadding-topを上書き */
+    padding: 0 !important;
     line-height: 0;
     font-size: 0;
     position: relative;
     display: block;
-    background: none !important; /* 背景画像を無効化 */
+    background: none !important;
 }
 
 .main-visual {
@@ -93,23 +92,17 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     vertical-align: top;
 }
 
-/* PC表示の調整を追加 */
+/* PC表示の調整 */
 @media screen and (min-width: 769px) {
     #mainimg {
-        margin-top: 0;
-        padding-top: 0 !important;
-        background: none !important;
+        margin-top: 90px; /* PCでのヘッダーの高さ分 */
     }
 }
 
 /* スマホ表示の調整 */
 @media screen and (max-width: 768px) {
     #mainimg {
-        margin-top: 60px;
-    }
-    
-    #mainimg::after {
-        display: none;
+        margin-top: 60px; /* スマホでのヘッダーの高さ分 */
     }
 }
 </style>
@@ -188,59 +181,47 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;  /* 間隔を広げる */
+    gap: 30px;
 }
 
 .section-header h2 {
     margin: 0;
-    font-size: 32px;  /* タイトルサイズを大きく */
+    font-size: 32px;
     line-height: 1.4;
 }
 
 .section-header h2 span {
     font-size: 16px;
     margin-top: 8px;
+    display: block;
 }
 
 .section-robot {
-    width: 150px;  /* PCでの画像サイズを拡大 */
+    width: 150px;
     height: auto;
-    animation: float 3s ease-in-out infinite;
     margin-top: -15px;
 }
 
-/* スマホ対応の改善 */
+/* スマホ表示の調整 */
 @media screen and (max-width: 768px) {
     .section-header {
         padding: 0 15px;
         margin-bottom: 25px;
         gap: 15px;
-        flex-direction: row;  /* 横並びを維持 */
-        align-items: flex-start;  /* 上揃えに変更 */
+        align-items: center; /* 中央揃えに変更 */
     }
 
     .section-header h2 {
-        font-size: 24px;  /* スマホでの文字サイズ */
-        text-align: left;  /* 左揃えに */
+        font-size: 24px;
+        text-align: center; /* 中央揃えに変更 */
         line-height: 1.5;
-        margin-top: 10px;  /* 上部に余白追加 */
-    }
-
-    .section-header h2 span {
-        font-size: 14px;
-        margin-top: 5px;
-        display: block;
+        margin: 0; /* マージンをリセット */
     }
 
     .section-robot {
-        width: 100px;  /* スマホでの画像サイズ */
-        margin-top: 0;
-    }
-
-    /* アニメーションの調整 */
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
+        width: 100px;
+        margin: 0; /* マージンをリセット */
+        animation: none; /* アニメーションを無効化 */
     }
 }
 
