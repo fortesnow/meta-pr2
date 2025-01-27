@@ -503,22 +503,29 @@ a.ddmenu::before {
 ---------------------------------------------------------------------------*/
 /*ブロック全体*/
 #mainimg {
-	background: var(--base-color) url("../images/mainimg_sh.jpg") no-repeat center center / cover;
-	width: 100%;
-	padding-top: 150%;	/*アスペクト比2:3（3÷2=1.5）*/
-	position: relative;
-	overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
 }
 
-	/*画面420px以上の追加指定*/
-	@media screen and (min-width:420px) {
+/* PC表示の設定 */
+@media screen and (min-width: 769px) {
+    #mainimg {
+        margin-top: 90px;
+        background: none !important; /* 背景画像を無効化 */
+        padding-top: 0 !important; /* padding-topを0に */
+    }
+}
 
-	#mainimg {
-		background: var(--base-color) url("../images/mainimg.jpg") no-repeat center center / cover;
-		padding-top: 56.25%;	/*アスペクト比16:9（9÷16=0.5624）*/
-	}
-
-	}/*追加指定ここまで*/
+/* スマホ表示の設定 */
+@media screen and (max-width: 768px) {
+    #mainimg {
+        margin-top: 60px;
+        background: none !important;
+    }
+}
 
 #mainimg > div {
 	position: absolute;

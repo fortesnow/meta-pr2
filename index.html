@@ -76,6 +76,7 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
     width: 100%;
     margin: 0;
     padding: 0 !important;
+    padding-top: 0 !important;
     line-height: 0;
     font-size: 0;
     position: relative;
@@ -95,14 +96,20 @@ src="https://www.facebook.com/tr?id=506708725289757&ev=PageView&noscript=1"
 /* PC表示の調整 */
 @media screen and (min-width: 769px) {
     #mainimg {
-        margin-top: 90px; /* PCでのヘッダーの高さ分 */
+        margin-top: 90px;
     }
 }
 
 /* スマホ表示の調整 */
 @media screen and (max-width: 768px) {
     #mainimg {
-        margin-top: 60px; /* スマホでのヘッダーの高さ分 */
+        margin-top: 60px;
+    }
+    
+    /* 暗いオーバーレイを完全に削除 */
+    #mainimg::after {
+        display: none !important;
+        background: none !important;
     }
 }
 </style>
