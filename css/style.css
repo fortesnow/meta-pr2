@@ -449,8 +449,8 @@ a.ddmenu::before {
 	flex-direction: column;
 	justify-content: space-between;
 	transform-origin: right top;
-	background: rgba(255,255,255,0.9);
-	border-radius: 0px 0px 0px 10px;		/*角を丸くする指定。左上、右上、右下、左下への順番。*/
+	background: rgba(43, 90, 143, 0.9); /* メインカラーの半透明 */
+	border-radius: 3px;
 	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
@@ -469,7 +469,7 @@ a.ddmenu::before {
 	display: block;
 	transition: 0.3s;	/*アニメーションにかける時間。0.3秒。*/
 	border-top: 1.5px solid var(--base-color);	/*線の幅、線種、varは色のことで冒頭のbase-colorを読み込みます。*/
-	background: #333;
+	background: #fff; /* バーの色を白に */
 }
 
 /*×印が出ている状態の3本バーの背景色*/
@@ -3152,12 +3152,12 @@ h2 img {
 
 /* ハンバーガーアイコンの色変更 */
 #menubar_hdr {
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: rgba(43, 90, 143, 0.9); /* メインカラーの半透明 */
+    border-radius: 3px;
 }
 
 #menubar_hdr span {
-    background: #333;
+    background: #fff; /* バーの色を白に */
 }
 
 /* アニメーションの調整 */
@@ -3452,6 +3452,145 @@ h2 img {
 
     /* スクロールバーとインジケーターのスタイルは維持 */
     // ... 既存のスクロールバーとインジケーターのスタイル ...
+}
+
+/* スワイプインジケーターのスタイル */
+.swipe-indicator {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .swipe-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0 20px;
+        position: relative;
+    }
+
+    .swipe-text {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #666;
+        font-size: 13px;
+        padding: 8px 15px;
+        background: rgba(43, 90, 143, 0.1);
+        border-radius: 20px;
+    }
+
+    .swipe-text i {
+        font-size: 16px;
+        color: #2B5A8F;
+        position: relative;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(0);
+        }
+        40% {
+            transform: translateX(5px);
+        }
+        60% {
+            transform: translateX(3px);
+        }
+    }
+}
+
+/* 業務内容セクションのスタイル */
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.service-category {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.service-header i {
+    font-size: 28px;
+}
+
+.service-header h3 {
+    font-size: 22px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* カテゴリー別の色設定 */
+.blue-text { color: #0066CC; }
+.yellow-text { color: #FFB800; }
+.green-text { color: #00B67A; }
+.purple-text { color: #9933CC; }
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-list li {
+    margin-bottom: 12px;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.main-service {
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.main-service::before {
+    content: '★';
+    color: #ff0000;
+    margin-right: 5px;
+}
+
+.sub-text {
+    color: #666;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+/* スマホ表示の調整 */
+@media screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-category {
+        padding: 20px;
+    }
+
+    .service-header i {
+        font-size: 24px;
+    }
+
+    .service-header h3 {
+        font-size: 20px;
+    }
 }
 
 
